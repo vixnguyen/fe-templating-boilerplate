@@ -9,6 +9,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const WebpackNotifierPlugin = require('webpack-notifier')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackInsertAtBodyEndPlugin = require('html-webpack-insert-at-body-end')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpackDevServerPort = parseInt(process.env.PORT || '3000', 10)
 const production = process.env.NODE_ENV === 'production'
 
@@ -56,7 +57,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: production ? 'js/[name].[chunkhash].js' : 'js/[name].js',
-    publicPath: '/'
+    publicPath: production ? './' : '/'
   },
   module: {
     rules: [
@@ -152,6 +153,12 @@ module.exports = {
     }),
     new FriendlyErrorsWebpackPlugin(),
     new WebpackNotifierPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/assets/js/pages',
+        to: 'js/pages'
+    }
+    ], {})
   ],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -178,11 +185,11 @@ routes.forEach((route) => {
       filename: `${route.page}.html`,
       template: `./src/views/pages/${route.page}.hbs`,
       inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-      }
+      // minify: {
+      //   removeComments: true,
+      //   collapseWhitespace: true,
+      //   removeAttributeQuotes: true
+      // }
     })
   );
 });
@@ -191,7 +198,7 @@ routes.forEach((route) => {
     new HtmlWebpackInsertAtBodyEndPlugin({
       filename: `${route.page}.html`,
       template: `./src/views/pages/${route.page}.hbs`,
-      scriptSrc: `./src/assets/js/pages/${route.page}.js`
+      scriptSrc: `./js/pages/${route.page}.js`
     })
   );
 })
