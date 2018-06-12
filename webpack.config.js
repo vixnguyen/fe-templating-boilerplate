@@ -48,8 +48,8 @@ let cssLoaders = [
 module.exports = {
   entry: {
     app: [
-      './assets/js/app.js',
-      './assets/stylesheet/app.scss'
+      './src/assets/js/app.js',
+      './src/assets/stylesheet/app.scss'
     ],
     // vendor: Object.keys(package.dependencies)
   },
@@ -126,7 +126,7 @@ module.exports = {
         options: {
           rootRelative: '../',
           helperDirs: [
-            path.join(__dirname, 'views', 'helpers')
+            path.join(__dirname, 'src/views', 'helpers')
           ]
         }
       }
@@ -176,7 +176,7 @@ routes.forEach((route) => {
     new HtmlWebpackPlugin({
       title: route.title,
       filename: `${route.page}.html`,
-      template: `./views/pages/${route.page}.hbs`,
+      template: `./src/views/pages/${route.page}.hbs`,
       inject: true,
       minify: {
         removeComments: true,
@@ -190,8 +190,8 @@ routes.forEach((route) => {
   module.exports.plugins.push(
     new HtmlWebpackInsertAtBodyEndPlugin({
       filename: `${route.page}.html`,
-      template: `./views/pages/${route.page}.hbs`,
-      scriptSrc: `./assets/js/pages/${route.page}.js`
+      template: `./src/views/pages/${route.page}.hbs`,
+      scriptSrc: `./src/assets/js/pages/${route.page}.js`
     })
   );
 })
