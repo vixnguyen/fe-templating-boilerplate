@@ -1,0 +1,41 @@
+{{#extend "layout"}}
+  {{> "partials/sidebar" }}
+  <div class="content">
+    {{> "partials/breadcrumbs" }}
+    <div class="container">
+      <h1 class="page__title">Birthday</h1>
+      <div class="page__content">
+        <div class="row">
+					<div class="col-md-4 ecard__item">
+						<div class="ecard__thumbnail">
+							<a href="./ecarddetail.html">
+								<img src="./images/ecard-1.png" alt="Ecard 1">
+							</a>
+						</div>
+						<div class="ecard__labels">
+							<span class="label label-new">New</span>
+						</div>
+						<div class="ecard__overlay">
+							<div class="ecard__emersion">
+								<div class="ecard__buttons">
+									<a href="#" class="tt-btn colorize-btn5 ecard__buttons--preview">
+										<i class="icon-shop24"></i>
+									</a>
+									<a href="#" class="tt-btn colorize-btn4 ecard__buttons--post">
+										<i class="icon-heart-empty-2"></i>
+									</a>
+									<a href="#" class="tt-btn colorize-btn4 ecard__buttons--member">
+										<i class="icon-untitled-1"></i>
+									</a>
+									<a href="#" class="tt-btn colorize-btn4 ecard__buttons--check">
+										<i class="icon-eye"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/extend}}

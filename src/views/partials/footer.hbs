@@ -1,5 +1,89 @@
-<div class="footer">
-  <div class="container">
-    <p><i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by mycompany.com</p>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="row">
+      <div class="col-md-2">
+        <img src="./images/logo.png" alt="eCardMAX">
+      </div>
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-md-4">
+            <ul>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/home.html">Home</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/invitation.html" class="footer__link">Invitations</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/media-grabber.html" class="footer__link">Media Grabber</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/black-list.html" class="footer__link">Black List</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/feedback.html"  class="footer__link">Contact Us</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/private-policy.html" class="footer__link">Privacy Policy</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/term-of-service.html" class="footer__link">Terms of Service</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/help.html" class="footer__link">Help</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/my-account.html" class="footer__link">My Account</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/address-book.html" class="footer__link">Address Book</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/calendar.html" class="footer__link">Calendar</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/reminder.html" class="footer__link">Event Reminder</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/my-album.html" class="footer__link">My Albums</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/favorite.html" class="footer__link">Favorites</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/history.html" class="footer__link">History</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/birthday-alert.html" class="footer__link">Birthday Alert</a></li>
+              <li><a href="https://ecardmax.com/ecardmaxdemo/send-video-card.html" class="footer__link">Send Video Card</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <li>
+                <i class="glyphicon glyphicon-calendar"></i> <strong> June</strong>
+                <a href="#" class="footer__link footer__link--block" >04 Independence Day</a>
+              </li>
+              <li>
+                <i class="glyphicon glyphicon-calendar"></i> <strong> June</strong>
+                <a href="#" class="footer__link footer__link--block" >04 Independence Day</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer__widget">
+          <form method="POST" class="searchform" action="index.php">
+            <input type="hidden" name="step" value="pickup">
+            <h2 class="h2-subscribe">Pick up your eCard</h2>
+            <input placeholder="Enter your card ID number" type="text" name="cs_id" value="">
+            <button type="submit" class="btn btn-default"></button>
+          </form>
+        </div>
+        <div class="footer__widget">
+          <form name="ecardmax_newsletter2" method="post" class="searchform" action="index.php">
+            <input type="hidden" name="step" value="newsletter">
+            <input type="hidden" name="what" value="">
+            <h2 class="h2-subscribe">Subscribe to our newsletter</h2>
+            <input onkeypress="return noEnterKey(event)" type="hidden" name="list_name" placeholder="Your Name">
+            <input onkeypress="return noEnterKey(event)" type="text" name="list_email" placeholder="Your Email">
+            <button type="button" class="btn btn-default" onclick="Subscribe2();"></button>
+          </form>
+        </div>
+        <div class="footer__social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link social__link--facebook" href="#"></a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--twitter" href="#"></a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--pinterest" href="#"></a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--gp" href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <a class="footer__link" href="#">Copyright © 1999-2018, ECARDMAX.COM</a>
+      </div>
+    </div>
   </div>
-</div>
+</footer>

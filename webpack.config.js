@@ -25,6 +25,18 @@ const routes = [
   {
     title: 'Contact',
     page: 'contact'
+  },
+  {
+    title: 'Category',
+    page: 'category'
+  },
+  {
+    title: 'Sub Category',
+    page: 'category_c'
+  },
+  {
+    title: 'Contact',
+    page: 'contact'
   }
 ];
 
@@ -126,6 +138,9 @@ module.exports = {
         loader: 'handlebars-loader',
         options: {
           rootRelative: '../',
+          partialsDir: [
+            path.join(__dirname, 'src/views', 'helpers')
+          ],
           helperDirs: [
             path.join(__dirname, 'src/views', 'helpers')
           ]
@@ -157,7 +172,11 @@ module.exports = {
       {
         from: 'src/assets/js/pages',
         to: 'js/pages'
-    }
+      },
+      {
+        from: 'src/assets/images',
+        to: 'images'
+      }
     ], {})
   ],
   resolve: {

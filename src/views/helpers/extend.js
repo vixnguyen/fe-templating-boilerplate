@@ -3,6 +3,8 @@ const handlebars = require('handlebars')
 
 handlebars.registerPartial('header', fs.readFileSync('./src/views/partials/header.hbs', 'utf8'))
 handlebars.registerPartial('footer', fs.readFileSync('./src/views/partials/footer.hbs', 'utf8'))
+handlebars.registerPartial('sidebar', fs.readFileSync('./src/views/partials/sidebar.hbs', 'utf8'))
+handlebars.registerPartial('breadcrumbs', fs.readFileSync('./src/views/partials/breadcrumbs.hbs', 'utf8'))
 
 module.exports = (name, context, options) => {
   const htmlWebpackPluginOptions = context.data.root.htmlWebpackPlugin.options
