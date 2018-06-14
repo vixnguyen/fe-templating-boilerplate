@@ -1,44 +1,69 @@
 <header class="header">
-  <div class="header__logo">
-    <img src="./images/logo.png" alt="eCardMAX">
-  </div>
-  <div class="header__sidebar">
-    <ul class="leftmenu">
-      <li class="leftmenu__item leftmenu__item--search">
-        <a class="leftmenu__link" href="#"></a>
-      </li>
-      <li class="leftmenu__item leftmenu__item--signin">
-        <a class="leftmenu__link" href="#"></a>
-      </li>
-      <li class="leftmenu__item leftmenu__item--signup">
-        <a class="leftmenu__link" href="#"></a>
-      </li>
-      <li class="leftmenu__item leftmenu__item--language">
-        <a class="leftmenu__link" href="#"></a>
-      </li>
-    </ul>
+  <div class="header__top">
+    <div class="container">
+      <div class="row">
+        <div class="header__logo col-md-2">
+          <img src="./images/logo.png" alt="eCardMAX">
+        </div>
+        <div class="header__sidebar col-md-10">
+          <ul class="leftmenu">
+            <li class="leftmenu__item leftmenu__item--search">
+              <a class="leftmenu__link" href="#"></a>
+            </li>
+            <li class="leftmenu__item leftmenu__item--signin">
+              <a class="leftmenu__link" href="#"></a>
+            </li>
+            <li class="leftmenu__item leftmenu__item--signup">
+              <a class="leftmenu__link" href="#"></a>
+            </li>
+            <li class="leftmenu__item leftmenu__item--language">
+              <a class="leftmenu__link" href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
   <nav class="header__menu">
-    <ul class="menu">
-      <li class="menu__item">
-        <a class="menu__link {{active-route 'index.html'}}" href="./index.html">Home</a>
-      </li>
-      <li>
-        <a class="menu__link {{active-route 'category.html'}}" href="./category.html">Category</a>
-      </li>
-      <li>
-        <a class="menu__link {{active-route 'index.html'}}" href="./index.html">Invitations</a>
-      </li>
-      <li>
-        <a class="menu__link {{active-route 'index.html'}}" href="./index.html">Tell Friends</a>
-      </li>
-      <li>
-        <a class="menu__link {{active-route 'index.html'}}" href="./index.html">Popular</a>
-      </li>
-      <li>
-        <a class="menu__link {{active-route 'index.html'}}" href="./index.html">Top-Rated</a></li>
-      <li>
-        <a class="menu__link {{active-route 'index.html'}}" href="./index.html">New</a></li>
-    </ul>
+    <div class="container">
+
+      <ul class="menu">
+        <li class="menu__item">
+          <a class="menu__link {{active-route 'index.html'}}" href="./index.html">Home</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link {{active-route 'category.html'}}" href="./category.html">Category</a>
+          <ul class="menu__child">
+            <li>
+              <a class="{{active-route 'category.html'}}" href="./category.html">Category 1</a>
+            </li>
+            <li>
+              <a class="{{active-route 'category.html'}}" href="./category.html">Category 2</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link {{active-route 'index.html'}}" href="./index.html">Invitations</a>
+          <ul class="menu__child">
+            <li>
+              <a class="{{active-route 'category.html'}}" href="./category.html">Invitations 1</a>
+            </li>
+            <li>
+              <a class="{{active-route 'category.html'}}" href="./category.html">Invitations 2</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link {{active-route 'index.html'}}" href="./index.html">Tell Friends</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link {{active-route 'index.html'}}" href="./index.html">Popular</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link {{active-route 'index.html'}}" href="./index.html">Top-Rated</a></li>
+        <li class="menu__item">
+          <a class="menu__link {{active-route 'index.html'}}" href="./index.html">New</a></li>
+      </ul>
+    </div>
   </nav>
 </header>

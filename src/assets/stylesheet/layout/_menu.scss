@@ -1,0 +1,33 @@
+.menu {
+  @include element("item") {
+		display: inline-block;
+		padding-right: 20px;
+		&:hover {
+			.menu__child {
+				display: block;
+			}
+			.menu__link {
+				color: map-get($color, primary);
+			}
+		}
+	}
+	a {
+		font-size: 0.85em;
+	}
+	@include element("link") {
+		display: block;
+		height: 60px;
+		line-height: 60px;
+		text-transform: uppercase;
+	}
+	@include element("child") {
+		display: none;
+    width: 100%;
+		position: absolute;
+		top: 60px;
+		left: 0px;
+		background: map-get($color, accent);
+		padding: 20px 40px;
+		z-index: 9999;
+  }
+}

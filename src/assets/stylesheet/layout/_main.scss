@@ -1,0 +1,22 @@
+.main {
+    $sidebarWidth: 420px;
+    .sidebar {
+        background: map-get($color, accent);
+        padding: 50px 40px;
+        box-sizing: border-box;
+        float: left;
+        width: $sidebarWidth;
+    }
+    .content {
+        background: map-get($color, white);
+        padding: 50px 40px;
+        box-sizing: border-box;
+        float: left;
+        width: calc(100% - 420px);
+    }
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}

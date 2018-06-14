@@ -1,0 +1,22 @@
+.breadcrumbs {
+    font-size: 0;
+    @include element('item') {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 12px;;
+        padding: 0 1em;
+        border-right: 1px solid map-get($color, accent);
+        &:first-of-type {
+            padding-left: 0;
+        }
+        &:last-of-type {
+            border-right: none;
+        }
+        a {
+            color: map-get($color, a)
+        }
+        .fa {
+            font-size: 16px;
+        }
+    }
+}

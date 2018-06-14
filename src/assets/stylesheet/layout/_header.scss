@@ -1,5 +1,25 @@
 .header {
+  height: 140px;
+  $logo-size: 250px;
+  background: map-get($color, white);
+  @include element('top') {
+    height: 80px;
+    box-sizing: border-box;
+    border-bottom: 1px solid map-get($color, border-color);
+    overflow: hidden
+  }
   @include element('logo') {
-    
+    width: $logo-size;
+    img {
+      height: 50px;
+      margin-top: 10px;
+    }
+  }
+  @include element('logo') {
+    width: calc(100% - $logo-size);
+  }
+  @include element('menu') {
+    height: 60px;
+    position:relative;
   }
 }

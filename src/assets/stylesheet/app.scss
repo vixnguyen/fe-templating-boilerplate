@@ -1,8 +1,9 @@
 // Variables
 @import "base/variables";
 @import "base/mixin";
-@import "layout/all";
-@import "partial/all";
+
+// Reset
+@import '~reset-css/reset.css';
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
@@ -14,14 +15,19 @@
 @import "~slick-carousel/slick/slick";
 @import "~slick-carousel/slick/slick-theme";
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+@import "base/base";
+@import "layout/all";
+@import "partial/all";
 
+/* Space out content a bit */
 [v-cloak] {
   display: none;
+}
+.container {
+  padding: 0 58px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 

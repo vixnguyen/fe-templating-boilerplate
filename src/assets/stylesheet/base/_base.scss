@@ -1,0 +1,12 @@
+a {
+    font-size: 0.85em;
+    color: map-get($color, b);
+    &:hover {
+        text-decoration: none;
+        color: map-get($color, primary);
+    }
+}
+body {
+    background: map-get($color, accent);
+    color: map-get($color, text)
+}
