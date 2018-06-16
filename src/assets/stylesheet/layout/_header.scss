@@ -5,7 +5,7 @@
   @include element('top') {
     height: 80px;
     box-sizing: border-box;
-    border-bottom: 1px solid map-get($color, border-color);
+    border-bottom: 1px solid map-get($color, border);
     overflow: hidden
   }
   @include element('logo') {
@@ -21,5 +21,12 @@
   @include element('menu') {
     height: 60px;
     position:relative;
+  }
+  .toolbar {
+    text-align: right;
+    font-size: 0;
+    @include element('item') {
+      display: inline-block;
+    }
   }
 }

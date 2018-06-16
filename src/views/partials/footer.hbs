@@ -2,7 +2,7 @@
   <div class="footer-content container">
     <div class="row">
       <div class="col-md-2">
-        <img src="./images/logo.png" alt="eCardMAX">
+        <img class="img-white" src="./images/logo.png" alt="eCardMAX">
       </div>
       <div class="col-lg-6">
         <div class="row">
@@ -34,55 +34,57 @@
           <div class="col-md-4">
             <ul>
               <li>
-                <i class="glyphicon glyphicon-calendar"></i> <strong> June</strong>
-                <a href="#" class="footer__link footer__link--block" >04 Independence Day</a>
+                <i class="fa fa-calendar"></i> <strong> June</strong>
+                <a href="#" class="footer__link block" >04 Independence Day</a>
               </li>
               <li>
-                <i class="glyphicon glyphicon-calendar"></i> <strong> June</strong>
-                <a href="#" class="footer__link footer__link--block" >04 Independence Day</a>
+                <i class="fa fa-calendar"></i> <strong> June</strong>
+                <a href="#" class="footer__link block" >04 Independence Day</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="col-lg-4">
-        <div class="footer__widget">
+        {{!-- <div class="footer__widget">
           <form method="POST" class="searchform" action="index.php">
             <input type="hidden" name="step" value="pickup">
-            <h2 class="h2-subscribe">Pick up your eCard</h2>
+            <h4 class="h2-subscribe">Pick up your eCard</h4>
             <input placeholder="Enter your card ID number" type="text" name="cs_id" value="">
             <button type="submit" class="btn btn-default"></button>
           </form>
-        </div>
+        </div> --}}
         <div class="footer__widget">
-          <form name="ecardmax_newsletter2" method="post" class="searchform" action="index.php">
+          <h5 class="footer__title">Newsletter Signup</h5>
+          <div class="footer__description">
+              Get the most recent updates from our site and be updated your self...</div>
+          <form name="ecardmax_newsletter2" method="post" action="index.php" class="form-single">
             <input type="hidden" name="step" value="newsletter">
             <input type="hidden" name="what" value="">
-            <h2 class="h2-subscribe">Subscribe to our newsletter</h2>
             <input onkeypress="return noEnterKey(event)" type="hidden" name="list_name" placeholder="Your Name">
-            <input onkeypress="return noEnterKey(event)" type="text" name="list_email" placeholder="Your Email">
-            <button type="button" class="btn btn-default" onclick="Subscribe2();"></button>
+            <input class="form-control" onkeypress="return noEnterKey(event)" type="text" name="list_email" placeholder="Your Email">
+            <button type="button" class="btn btn-default" onclick="Subscribe2();">Subscribe!</button>
           </form>
         </div>
         <div class="footer__social">
-          <ul class="social__list">
+          <ul class="social">
             <li class="social__item">
-              <a class="social__link social__link--facebook" href="#"></a>
+              <a class="btn-circle btn-circle--facebook" href="#"></a>
             </li>
             <li class="social__item">
-              <a class="social__link social__link--twitter" href="#"></a>
+              <a class="btn-circle btn-circle--twitter" href="#"></a>
             </li>
             <li class="social__item">
-              <a class="social__link social__link--pinterest" href="#"></a>
+              <a class="btn-circle btn-circle--pinterest" href="#"></a>
             </li>
             <li class="social__item">
-              <a class="social__link social__link--gp" href="#"></a>
+              <a class="btn-circle btn-circle--google" href="#"></a>
             </li>
           </ul>
         </div>
       </div>
       <div class="col-md-12">
-        <a class="footer__link" href="#">Copyright © 1999-2018, ECARDMAX.COM</a>
+        <a class="link--secondary" href="#">Copyright © 1999-2018, ECARDMAX.COM</a>
       </div>
     </div>
   </div>

@@ -12,6 +12,13 @@ module.exports = (name, context, options) => {
   handlebars.registerHelper('active-route', (name, context) => {
     return name === htmlWebpackPluginOptions.filename ? 'active' : ''
   })
+  handlebars.registerHelper('loop', (n, block) => {
+    var accum = ''
+    for (var i = 0; i < n; ++i) {
+      accum += block.fn(i)
+    }
+    return accum
+  })
 
   const layout = handlebars.compile(fs.readFileSync(`./src/views/${name}.hbs`, 'utf8'))
 

@@ -1,12 +1,55 @@
 a {
-    font-size: 0.85em;
-    color: map-get($color, b);
-    &:hover {
-        text-decoration: none;
-        color: map-get($color, primary);
+  font-size: 0.85em;
+  color: map-get($color, b);
+  &:hover {
+    text-decoration: none;
+    color: map-get($color, primary);
+  }
+}
+.link--secondary {
+  color: map-get($color , b) !important;
+  &:hover {
+    color: map-get($color, white) !important;
+  }
+}
+.link--primary {
+  color: map-get($color , primary) !important;
+  &:hover {
+    color: map-get($color, secondary) !important;
+  }
+}
+.img-white {
+  filter: brightness(0) invert(1);
+}
+.block {
+  display: block !important;
+}
+.btn-circle {
+  display: inline-block;
+  @include btncircle();
+  margin: 0 4px;
+}
+ul,
+div {
+  .btn-circle {
+    &:first-of-type {
+      margin-left: 0;
     }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+.label {
+  display: inline-block;
+  background: map-get($color, primary);
+  padding: 2px 8px;
+}
+.page__title {
+  margin: 40px 0;
 }
 body {
-    background: map-get($color, accent);
-    color: map-get($color, text)
+  background: map-get($color, accent);
+  color: map-get($color, text);
+  font-size: 16px;
 }

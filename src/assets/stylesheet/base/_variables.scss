@@ -14,14 +14,29 @@ $color: (
   primary: #f18048,
   secondary: #FF0,
   accent: #f5f5f5,
-  b: #777777,
+  text: #333333,
   white: #ffffff,
   a: #b7b7b7,
-  text: #333333
+  b: #777777,
+  c: #161616
 );
 
 $fa-icon: (
-  search: \1233,
-  user: \1233,
-  language: \1234
-)
+  search: "\f002",
+  user: "\1233",
+  language: "\f1ab",
+  preview: "\f04b",
+  lock: "\f023",
+  unlock: "\f007",
+  facebook: "\f09a",
+  twitter: "\f099",
+  pinterest: "\f231",
+  google: "\f1a0",
+  check: "\f00c",
+  member: "\f235",
+  post: "\f03e",
+  signin: "\f090",
+  signout: "\f08b",
+  signup: "\f234",
+  detail: "\f06e"
+);

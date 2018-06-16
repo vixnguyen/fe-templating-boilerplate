@@ -1,0 +1,9 @@
+$icons: preview, lock, facebook, twitter, check, member, post, unlock, pinterest, google, search, signin, signout, signup, language, detail;
+
+@each $icon in $icons {
+  .btn-circle {
+    &--#{$icon} {
+      @include faicon(#{$icon});
+    }
+  }
+}

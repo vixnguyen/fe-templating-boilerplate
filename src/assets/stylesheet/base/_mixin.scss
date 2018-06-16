@@ -10,12 +10,67 @@
 /// Block Modifier
 /// @access public
 /// @param {String} $modifier - Modifier's name
-@mixin modifier($modifier) {
-	&--#{$modifier} {
-		@content;
+@mixin modifier($modifier, $element: "") {
+	@if $element != "" {
+		&__#{$element}--#{$modifier} {
+			@content;
+		}
+	}
+	@else {
+		&--#{$modifier} {
+			@content;
+		}
 	}
 }
 
-@mixin fa-icon() {
-	
+@mixin faicon($content) {
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: map-get($fa-icon, $content);
+    font-family: "FontAwesome";
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@mixin btncircle($size: 58px, $color: #b7b7b7) {
+	border-radius: 50%;
+	width: $size;
+	height: $size;
+	border: 2px solid transparent;
+	background: transparent;
+  color: $color;
+  position: relative;
+}
+@mixin outline(
+  $color: map-get($color, a), 
+  $border: map-get($color, a), 
+  $hover-color: map-get($color, a), 
+  $hover-border: map-get($color, a)
+) {
+	background: transparent;
+  border-color: $border;
+  color: $color;
+  &:hover {
+    border-color: $hover-border;
+    color: $hover-color;
+  }
+}
+@mixin filled(
+  $color: map-get($color, white),
+  $bkg: map-get($color, a),
+  $hover-color: map-get($color, a),
+  $hover-bkg: map-get($color, white)
+) {
+	background: $bkg;
+  border-color: $bkg;
+  color: $color;
+  &:hover {
+    background: $hover-bkg;
+    border-color: $hover-bkg;
+    color: $hover-color;
+  }
 }

@@ -1,0 +1,21 @@
+.form-single {
+	font-size: 0px;
+	input,
+	button {
+		height: 46px;
+		overflow: hidden;
+		box-sizing: border-box;
+		display: inline-block;
+		vertical-align: top;
+		border-radius: 0;
+		border: 0;
+	}
+	input {
+		width: calc(100% - 120px);
+	}
+	button {
+		width: 120px;
+		background: map-get($color, primary);
+		color: map-get($color, white);
+	}
+}

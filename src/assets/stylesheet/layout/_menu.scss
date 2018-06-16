@@ -1,33 +1,44 @@
 .menu {
-  @include element("item") {
+	a {
+		font-size: 0.85em;
+		display: inline-block;
+	}
+  > li {
 		display: inline-block;
 		padding-right: 20px;
 		&:hover {
-			.menu__child {
+			ul {
 				display: block;
 			}
-			.menu__link {
+			> a {
 				color: map-get($color, primary);
 			}
 		}
+		> a {
+			display: block;
+			height: 60px;
+			line-height: 60px;
+			text-transform: uppercase;
+		}
+		> ul {
+			display: none;
+			width: 100%;
+			position: absolute;
+			top: 60px;
+			left: 0px;
+			background: map-get($color, accent);
+			padding: 20px 40px;
+			z-index: 9999;
+			> li {
+				display: inline-block;
+				padding-right: 30px;
+				height: auto;
+				> a {
+					font-weight: bold;
+					text-transform: none;
+					margin-bottom: 15px;
+				}
+			}
+		}
 	}
-	a {
-		font-size: 0.85em;
-	}
-	@include element("link") {
-		display: block;
-		height: 60px;
-		line-height: 60px;
-		text-transform: uppercase;
-	}
-	@include element("child") {
-		display: none;
-    width: 100%;
-		position: absolute;
-		top: 60px;
-		left: 0px;
-		background: map-get($color, accent);
-		padding: 20px 40px;
-		z-index: 9999;
-  }
 }

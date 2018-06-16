@@ -18,13 +18,14 @@
 @import "base/base";
 @import "layout/all";
 @import "partial/all";
+@import "element/all";
 
 /* Space out content a bit */
 [v-cloak] {
   display: none;
 }
 .container {
-  padding: 0 58px;
+  padding: 0 40px;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;

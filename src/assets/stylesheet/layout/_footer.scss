@@ -1,0 +1,35 @@
+.footer {
+	font-size: 1em;
+	background: map-get($color, c);
+	padding: 60px 0;
+	color: map-get($color, white);
+	li {
+		padding: 4px 0;
+	}
+	a {
+		color: map-get($color, primary);
+		&:hover {
+			color: map-get($color, white);
+		}
+	}
+	img {
+		width: 75%;
+	}
+	.footer__title {
+		margin: 0 0 20px 0;
+	}
+	.footer__description {
+		color: map-get($color, b);
+		margin-bottom: 15px;
+	}
+	.social {
+		margin-top: 20px;
+		font-size: 0;
+		@include element('item') {
+			display: inline-block;
+    }
+  }
+  .btn-circle {
+    @include filled(map-get($color, white), map-get($color, b), map-get($color, primary), map-get($color, white));
+  }
+}

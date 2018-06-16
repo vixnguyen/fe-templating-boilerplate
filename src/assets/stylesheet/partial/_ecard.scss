@@ -1,0 +1,53 @@
+.ecard {
+	position: relative;
+	padding: 0 15px;
+	margin-bottom: 30px;
+	&:hover {
+		.ecard__overlay {
+			display: flex;
+		}
+		.ecard__labels {
+			display: none;
+		}
+	}
+	@include element("thumbnail") {
+		img {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+	@include element("labels") {
+		position: absolute;
+		top: 12px;
+		left: 25px;
+	}
+	@include element("overlay") {
+		display: flex;
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: calc(100% - 30px);
+		background: map-get($color, white);
+		background: rgba(255, 255, 255, 0.9);
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+	}
+	@include element("title") {
+		margin: 0;
+		color: map-get($color, text);
+  }
+  @include element("price") {
+    color: map-get($color, primary);
+		margin: 15px 0;
+	}
+	@include element("rating") {
+		margin: 15px 0;
+	}
+	@include element("buttons") {
+		font-size: 0;
+  }
+  .btn-circle {
+    @include outline(map-get($color, a), transparent, map-get($color, primary), map-get($color, primary));
+  }
+}

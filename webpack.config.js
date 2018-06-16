@@ -135,11 +135,14 @@ module.exports = {
       },
       {
         test: /\.hbs$/,
-        loader: 'handlebars-loader',
+        loader: 'handlebars-loader?extensions=hbs',
         options: {
+          precompileOptions: {
+            knownHelpersOnly: false,
+          },
           rootRelative: '../',
-          partialsDir: [
-            path.join(__dirname, 'src/views', 'helpers')
+          partialDirs: [
+            path.join(__dirname, 'src/views', '*')
           ],
           helperDirs: [
             path.join(__dirname, 'src/views', 'helpers')
@@ -180,7 +183,7 @@ module.exports = {
     ], {})
   ],
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.hbs'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       'handlebars': 'handlebars/dist/handlebars.js'
