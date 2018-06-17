@@ -1,10 +1,108 @@
 {{#extend "layout"}}
-  <div class="content content-fullwidth">
+  <div class="content fullwidth">
     {{> "partials/breadcrumbs" }}
-    <h1 class="page__title">Birthday</h1>
-		<div class="page__content">
-			<div class="row">
-				
+		<div class="page__content ecard-detail">
+			<div id="div_card_body" class="row">
+				<div class="col-md-6">
+					<div id="div_card_body">
+						<img src="./images/ecard-1.png" alt="Ecard 1">
+					</div>
+					<div class="ecard-detail__sharing">
+						<span class="btn btn-default no-padding sendto">
+							Send to <i class="fa fa-share-alt"></i>
+						</span>
+						<a class="btn-circle btn-circle--twitter" id="atwitter" href="javascript:;" onclick="share_to_social('twitter');"></a>
+						<a class="btn-circle btn-circle--facebook" id="afacebook" href="javascript:;" onclick="share_to_social('facebook');"></a>
+						<a class="btn-circle btn-circle--google" id="agoogleplus" href="javascript:;" onclick="share_to_social('googleplus');"></a>
+						<a class="btn-circle btn-circle--linkedin" id="alinkedin" href="javascript:;" onclick="share_to_social('linkedin');"></a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="ecard-detail__markup">
+						<h2>Markup your eCard</h2>
+						<div class="ecard-detail__toolbar">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Select Skin
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Separated link</a>
+								</div>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Stamp
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Separated link</a>
+								</div>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Music
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Separated link</a>
+								</div>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Poem
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Separated link</a>
+								</div>
+							</div>
+						</div>
+						<div class="ecard-detail__editor">
+							<textarea class="form-control" name="" id="" rows="5"></textarea>
+						</div>
+						<div class="ecard-detail__action">
+							<button class="btn btn-default btn-ecardmax">Personalize and Send</button>
+						</div>
+					</div>
+					<div class="ecard-detail__info">
+						<h2 class="">eCard Detail</h2>
+						<div class="tt-product-head__price">$20</div>
+						<div class="tt-product-head__review">
+							<span class="tt-product-head__stars tt-stars">
+								<img src="./images/rating-50.gif" alt="5 stars">
+							</span>
+							<span class="tt-product-head__review-count"><a href="#">2 Review(s)</a></span>
+							{{!-- <span class="tt-product-head__review-add"><a href="#">Add Your Review</a></span> --}}
+							<span class="tt-product-head__review-add"><a href="#">2 (Sent)</a></span>
+						</div>
+						<div class="ecard-detail__widget">
+							<a class="btn-circle btn-circle--favorite" id="atwitter" href="javascript:;" onclick="share_to_social('twitter');"></a>
+							<a class="btn-circle btn-circle--prev" id="agoogleplus" href="javascript:;" onclick="share_to_social('googleplus');"></a>
+							<a class="btn-circle btn-circle--next" id="afacebook" href="javascript:;" onclick="share_to_social('facebook');"></a>
+						</div>
+						<div class="tt-product-head__tags">
+							<span>Tags:</span>
+							<a href="#">Wireless</a>,
+							<a href="#">Built-In Microphone</a>,
+							<a href="#">Bluetooth Enabled</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="show_personalize_table row" style="display: block;">
 			</div>
 		</div>
   </div>

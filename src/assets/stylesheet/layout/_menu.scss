@@ -6,37 +6,144 @@
   > li {
 		display: inline-block;
 		padding-right: 20px;
-		&:hover {
-			ul {
-				display: block;
-			}
-			> a {
-				color: map-get($color, primary);
-			}
-		}
 		> a {
 			display: block;
-			height: 60px;
-			line-height: 60px;
 			text-transform: uppercase;
 		}
 		> ul {
 			display: none;
-			width: 100%;
-			position: absolute;
-			top: 60px;
-			left: 0px;
-			background: map-get($color, accent);
-			padding: 20px 40px;
-			z-index: 9999;
 			> li {
 				display: inline-block;
-				padding-right: 30px;
+				padding: 0.25em 1.25em;
 				height: auto;
 				> a {
 					font-weight: bold;
 					text-transform: none;
-					margin-bottom: 15px;
+					margin-bottom: 0.75em;
+				}
+			}
+		}
+	}
+}
+
+.menu-container {
+	position: relative;
+	z-index: 10;
+}
+.menu__icon {
+	display: none;
+	position: relative;
+	margin: 1.25em;
+	&:after {
+		content: map-get($fa-icon, bars);
+		font-family: "FontAwesome";
+		font-size: 1.5rem;
+		padding: 0;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+	}
+}
+
+.menu__item--has-child {
+	&:before {
+		content: map-get($fa-icon, bars);
+		font-family: "FontAwesome";
+		display: none;
+		cursor: pointer;
+		position: absolute;
+		right: 1.25em;
+		top: 50%;
+		right: 20px;
+		transform: translateY(-50%);
+	}
+}
+
+@media only screen and (min-width: 959px) {
+	.menu-container {
+		padding: 0 40px;
+	}
+	.menu {
+		> li {
+			&:hover {
+				ul {
+					display: block;
+				}
+				> a {
+					color: map-get($color, primary);
+				}
+			}
+			> a {
+				height: 60px;
+				line-height: 60px;
+			}
+			> ul {
+				width: 100%;
+				position: absolute;
+				top: 60px;
+				left: 0px;
+				background: map-get($color, accent);
+				padding: 20px 40px;
+				z-index: 9999;
+				> li {
+					> a {
+						font-size: 1em;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 959px) {
+	.menu-container {
+		width: 100%;
+	}
+	.menu__icon {
+		display: block;
+	}
+	.menu__item--has-child {
+		&:before {
+			display: block;
+		}
+	}
+	.menu {	
+		display: none;
+		&.menu--mobile {
+			display: block;
+			background: map-get($color, accent);
+		}
+		> li {
+			width: 100%;
+			float: none;
+			display: block;
+			position: relative;
+			padding: 0;
+			border-top: 1px solid map-get($color, border);
+			> a {
+				padding: 0.75em 1.25em;
+				display: inline-block;
+			}
+			> ul {
+				padding: 0.5em 0;
+				position: absolute;
+				width: 100%;
+				background: map-get($color, accent);
+				z-index: 10;
+				border-top: 1px solid map-get($color, border);
+				> li {
+					width: 100%;
+					&:first-child {
+						margin: 0;
+					}
+					> a {
+						padding: 0.25em 0;
+						margin-bottom: 0;
+					}
+					> ul {
+						display: block
+					}
 				}
 			}
 		}

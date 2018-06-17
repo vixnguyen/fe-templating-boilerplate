@@ -22,7 +22,7 @@
 		left: 25px;
 	}
 	@include element("overlay") {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 0;
 		height: 100%;

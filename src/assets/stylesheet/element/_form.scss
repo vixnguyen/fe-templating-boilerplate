@@ -1,0 +1,20 @@
+.form-control {
+  border-radius: 0;
+  background: map-get($color, accent);
+  border-color: transparent;
+  &:focus {
+    border-color: #fbe2d4;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(249, 209, 187, 0.28);
+    box-shadow: 0 0 0 0.2rem rgba(249, 209, 187, 0.28);
+  }
+}
+input,
+select {
+  height: 46px;
+  box-sizing: border-box;
+}
+.btn {
+  border-radius: 0;
+  border-color: transparent;
+}

@@ -13,9 +13,6 @@
     box-sizing: border-box;
     float: left;
     width: calc(100% - 420px);
-    &--fullwidth {
-      width: 100%;
-    }
   }
   &:after {
     content: "";

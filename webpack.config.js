@@ -31,6 +31,10 @@ const routes = [
     page: 'category'
   },
   {
+    title: 'Detail',
+    page: 'detail'
+  },
+  {
     title: 'Sub Category',
     page: 'category_c'
   },
@@ -63,7 +67,7 @@ module.exports = {
     app: [
       './src/assets/js/app.js',
       './src/assets/stylesheet/app.scss'
-    ],
+    ]
     // vendor: Object.keys(package.dependencies)
   },
   output: {
@@ -163,7 +167,8 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
-      Popper: ['popper.js', 'default']
+      Popper: ['popper.js', 'default'],
+      slicknav: 'slicknav/dist/jquery.slicknav'
     }),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({

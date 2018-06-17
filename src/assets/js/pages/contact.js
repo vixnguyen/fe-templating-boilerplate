@@ -1,1 +1,3 @@
-console.log('Contact');
+$(document).ready(function() {
+  $('#js-slicknav').slicknav();
+});

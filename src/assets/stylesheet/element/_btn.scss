@@ -1,4 +1,4 @@
-$icons: preview, lock, facebook, twitter, check, member, post, unlock, pinterest, google, search, signin, signout, signup, language, detail;
+$icons: preview, lock, facebook, twitter, check, member, post, unlock, pinterest, google, search, signin, signout, signup, language, detail, linkedin, share, favorite, next, prev;
 
 @each $icon in $icons {
   .btn-circle {

@@ -1,0 +1,40 @@
+.ecard-detail {
+  .btn-circle {
+    @include outline();
+  }
+  .ecard-detail__sharing {
+    font-size: 0;
+    margin-top: 20px;
+    text-align: center;
+    .sendto {
+      font-size: 28px;
+      color: map-get($color, b);
+      display: inline-block;
+      margin-right: 16px;
+    }
+  }
+  .ecard-detail__toolbar {
+    .btn {
+      padding-left: 0;
+      padding-right: 20px;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+  .ecard-detail__info {
+    margin-top: 40px;
+  }
+  .ecard-detail__editor {
+    margin: 15px 0;
+  }
+  .ecard-detail__action {
+    text-align: right;
+  }
+  .ecard-detail__widget {
+    font-size: 0;
+    .btn-circle {
+      @include outline(map-get($color, b), transparent);
+    }
+  }
+}

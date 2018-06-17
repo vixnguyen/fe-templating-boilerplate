@@ -44,16 +44,17 @@
 	background: transparent;
   color: $color;
   position: relative;
+  vertical-align: middle;
 }
 @mixin outline(
-  $color: map-get($color, a), 
+  $a: map-get($color, a), 
   $border: map-get($color, a), 
-  $hover-color: map-get($color, a), 
-  $hover-border: map-get($color, a)
+  $hover-color: map-get($color, primary), 
+  $hover-border: map-get($color, primary)
 ) {
 	background: transparent;
   border-color: $border;
-  color: $color;
+  color: $a;
   &:hover {
     border-color: $hover-border;
     color: $hover-color;
