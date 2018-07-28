@@ -12,36 +12,44 @@ const HtmlWebpackInsertAtBodyEndPlugin = require('html-webpack-insert-at-body-en
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpackDevServerPort = parseInt(process.env.PORT || '3000', 10)
 const production = process.env.NODE_ENV === 'production'
-
+const handlebars = require('handlebars')
+handlebars.registerHelper('loop', (n, block) => {
+  var accum = ''
+  for (var i = 0; i < n; ++i) {
+    accum += block.fn(i)
+  }
+  return accum
+})
 const routes = [
   {
     title: 'Home',
     page: 'index'
   },
-  {
-    title: 'About',
-    page: 'about'
-  },
-  {
-    title: 'Contact',
-    page: 'contact'
-  },
-  {
-    title: 'Category',
-    page: 'category'
-  },
-  {
-    title: 'Detail',
-    page: 'detail'
-  },
-  {
-    title: 'Sub Category',
-    page: 'category_c'
-  },
-  {
-    title: 'Contact',
-    page: 'contact'
-  }
+  // {
+  //   title: 'About',
+  //   page: 'about'
+  // },
+  // {
+  //   title: 'Contact',
+  //   page: 'contact'
+  // },
+  // {
+  //   title: 'Category',
+  //   page: 'category',
+  //   script: 'category'
+  // },
+  // {
+  //   title: 'Detail',
+  //   page: 'detail'
+  // },
+  // {
+  //   title: 'Sub Category',
+  //   page: 'category_c'
+  // },
+  // {
+  //   title: 'Contact',
+  //   page: 'contact'
+  // }
 ];
 
 let cssLoaders = [
@@ -139,20 +147,57 @@ module.exports = {
       },
       {
         test: /\.hbs$/,
-        loader: 'handlebars-loader?extensions=hbs',
-        options: {
-          precompileOptions: {
-            knownHelpersOnly: false,
+        use: [
+          { 
+            loader: 'handlebars-loader?extensions=hbs',
+            options: {
+              precompileOptions: {
+                knownHelpersOnly: false,
+              },
+              rootRelative: '../',
+              helperDirs: [
+                path.join(__dirname, 'src/views', 'helpers')
+              ]
+            }
           },
-          rootRelative: '../',
-          partialDirs: [
-            path.join(__dirname, 'src/views', '*')
-          ],
-          helperDirs: [
-            path.join(__dirname, 'src/views', 'helpers')
-          ]
-        }
+          {
+            loader: 'assemble-webpack-loader',
+            options: {
+              layouts: path.resolve('./src/views/layout.hbs'),
+              partials: path.resolve('./src/views/partials/*.hbs')
+            }
+          }
+          // ,
+          // {
+          //   loader: 'handlebars-loader?extensions=hbs',
+          //   options: {
+          //     precompileOptions: {
+          //       knownHelpersOnly: false,
+          //     },
+          //     rootRelative: '../',
+          //     helperDirs: [
+          //       path.join(__dirname, 'src/views', 'helpers')
+          //     ]
+          //   }
+          // }
+        ]
       }
+      // {
+      //   test: /\.hbs$/,
+      //   loader: 'handlebars-loader?extensions=hbs',
+      //   options: {
+      //     precompileOptions: {
+      //       knownHelpersOnly: false,
+      //     },
+      //     rootRelative: '../',
+      //     partialDirs: [
+      //       path.join(__dirname, 'src/views', '*')
+      //     ],
+      //     helperDirs: [
+      //       path.join(__dirname, 'src/views', 'helpers')
+      //     ]
+      //   }
+      // }
     ]
   },
   optimization: {
@@ -209,6 +254,7 @@ routes.forEach((route) => {
   module.exports.plugins.push(
     new HtmlWebpackPlugin({
       title: route.title,
+      data: [1, 2, 3, 4],
       filename: `${route.page}.html`,
       template: `./src/views/pages/${route.page}.hbs`,
       inject: true,
@@ -221,11 +267,13 @@ routes.forEach((route) => {
   );
 });
 routes.forEach((route) => {
-  module.exports.plugins.push(
-    new HtmlWebpackInsertAtBodyEndPlugin({
-      filename: `${route.page}.html`,
-      template: `./src/views/pages/${route.page}.hbs`,
-      scriptSrc: `./js/pages/${route.page}.js`
-    })
-  );
+  if (route.script) {
+    module.exports.plugins.push(
+      new HtmlWebpackInsertAtBodyEndPlugin({
+        filename: `${route.page}.html`,
+        template: `./src/views/pages/${route.page}.hbs`,
+        scriptSrc: `./js/pages/${route.page}.js`
+      })
+    );
+  }
 })

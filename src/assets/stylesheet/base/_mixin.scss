@@ -22,17 +22,20 @@
 		}
 	}
 }
+@mixin icon-font($content) {
+  content: map-get($fa-icon, $content);
+  font-family: "FontAwesome";
+  -webkit-font-smoothing: antialiased;
+}
 
-@mixin faicon($content) {
+@mixin btn-icon($content) {
   &:before {
+    font-size: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    content: map-get($fa-icon, $content);
-    font-family: "FontAwesome";
-    font-size: 20px;
-    -webkit-font-smoothing: antialiased;
+    @include icon-font($content);
   }
 }
 
@@ -74,4 +77,70 @@
     border-color: $hover-bkg;
     color: $hover-color;
   }
+}
+
+@mixin middle($position: absolute) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin centered($position: absolute) {
+  position: $position;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin menu-size($size: $menu-size-max) {
+  > .header__menu {
+    height: $size;
+    @include middle();
+    > .menu-container {
+      padding-left: calc(#{$logo-size} + #{$layout-space});
+    }
+    .menu__link--l1 {
+      height: $size;
+      line-height: $size;
+    }
+    .menu__child--l1 {
+      top: $size;
+    }
+  }
+}
+
+@keyframes scale-y {
+  from {
+    transform: scaleY(0.7);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes scale-x {
+  from {
+    transform: scaleX(0.7);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes scale-all {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+%non-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
 }

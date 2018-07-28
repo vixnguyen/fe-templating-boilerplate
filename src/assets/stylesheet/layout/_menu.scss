@@ -12,6 +12,8 @@
 		}
 		> ul {
 			display: none;
+			animation: scale-y .3s;
+			animation-fill-mode: both;
 			> li {
 				display: inline-block;
 				padding: 0.25em 1.25em;
@@ -62,7 +64,17 @@
 
 @media only screen and (min-width: 959px) {
 	.menu-container {
-		padding: 0 40px;
+		padding: 0 $layout-space;
+	}
+	.header__main {
+		@include menu-size();
+	}
+	.header {
+		&.header--sticky {
+			.header__main {
+				@include menu-size($menu-size-min);
+			}
+		}
 	}
 	.menu {
 		> li {
@@ -99,6 +111,7 @@
 @media only screen and (max-width: 959px) {
 	.menu-container {
 		width: 100%;
+		padding: 0 !important;
 	}
 	.menu__icon {
 		display: block;

@@ -1,0 +1,64 @@
+.category {
+  margin-top: 24px;
+  @extend %non-select;
+  li {
+    padding: 8px 0;
+    &:before {
+      content: " ";
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: .5em;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      border: 2px solid map-get($color, a);
+      background: map-get($color, white);
+    }
+    &.active {
+      &:before {
+        border: 2px solid map-get($color, white);
+        background: map-get($color, primary);
+      }
+      > a {
+        color: map-get($color, primary)
+      }
+    }
+  }
+  .category__item {
+    position: relative;
+    &--has-child {
+      &:after {
+        @include icon-font("angle-right");
+        padding: 8px;
+        position: absolute;
+        right: -8px;
+        top: 0;
+        cursor: pointer;
+      }
+    }
+    a {
+      font-size: 1em;
+      display: inline-block;
+      vertical-align: middle;
+      width: calc(100% - 24px);
+    }
+  }
+  .category__child {
+    padding-top: 8px;
+    display: none;
+    padding-left: 1em;
+    animation: scale-y .3s;
+    animation-fill-mode: both;
+  }
+  .category__item {
+    &.in,
+    &.active {
+      &.category__item--has-child:after {
+        content: map-get($fa-icon, angle-down);
+      }
+      .category__child {
+        display: block;
+      }
+    }
+  }
+}

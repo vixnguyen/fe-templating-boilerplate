@@ -13,6 +13,8 @@
   "author": "Adrien Beaudouin",
   "license": "MIT",
   "devDependencies": {
+    "assemble-webpack": "^3.0.3",
+    "assemble-webpack-loader": "^0.1.0",
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",

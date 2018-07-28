@@ -1,11 +1,17 @@
+{{#each data}}
+	<div>Each works!</div>
+{{/each}}
 {{#extend "layout"}}
+	{{#each data}}
+		<div>Each works!</div>
+	{{/each}}
   {{> "partials/sidebar" }}
   <div class="content">
     {{> "partials/breadcrumbs" }}
     <h1 class="page__title">Birthday</h1>
 		<div class="page__content">
 			<div class="row">
-				<div class="col-md-6 ecard">
+				<div class="col-md-4 ecard">
 					<div class="ecard__thumbnail">
 						<a href="./ecarddetail.html">
 							<img src="./images/ecard-1.png" alt="Ecard 1">
@@ -17,14 +23,14 @@
 					<div class="ecard__overlay">
 						<div class="ecard__emersion">
 							<h6 class="ecard__title">Special one to remember</h6>
-              <div class="ecard__price">
+							<div class="ecard__price">
 								$20
 							</div>
 							<div class="ecard__rating">
 								<img src="./images/rating-50.gif" alt="5 stars">
 							</div>
 							<div class="ecard__buttons">
-								<a href="#" class="btn-circle btn-circle--preview"></a>
+								<a href="#" class="btn-circle btn-circle--preview" data-toggle="modal" data-target="#ec-modal"></a>
 								<a href="#" class="btn-circle btn-circle--post"></a>
 								<a href="#" class="btn-circle btn-circle--member"></a>
 								<a href="#" class="btn-circle btn-circle--check"></a>
@@ -33,7 +39,39 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 ecard">
+				<div class="col-md-4 ecard">
+					<div class="ecard__thumbnail">
+						<a href="./ecarddetail.html">
+							<img src="./images/ecard-1.png" alt="Ecard 1">
+						</a>
+					</div>
+					<div class="ecard__labels">
+						<span class="label">New</span>
+					</div>
+					<div class="ecard__overlay">
+						<div class="ecard__emersion">
+							<h6 class="ecard__title">Special one to remember</h6>
+							<div class="ecard__rating">
+								<img src="./images/rating-50.gif" alt="5 stars">
+							</div>
+							<div class="ecard__buttons">
+								<a href="#" class="btn-circle btn-circle--preview" data-toggle="modal" data-target="#ec-modal">
+									<i class="icon-shop24"></i>
+								</a>
+								<a href="#" class="btn-circle btn-circle--post">
+									<i class="icon-heart-empty-2"></i>
+								</a>
+								<a href="#" class="btn-circle btn-circle--member">
+									<i class="icon-untitled-1"></i>
+								</a>
+								<a href="#" class="btn-circle btn-circle--check">
+									<i class="icon-eye"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 ecard">
 					<div class="ecard__thumbnail">
 						<a href="./ecarddetail.html">
 							<img src="./images/ecard-1.png" alt="Ecard 1">
@@ -65,7 +103,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 ecard">
+				<div class="col-md-4 ecard">
 					<div class="ecard__thumbnail">
 						<a href="./ecarddetail.html">
 							<img src="./images/ecard-1.png" alt="Ecard 1">
@@ -97,7 +135,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 ecard">
+				<div class="col-md-4 ecard">
 					<div class="ecard__thumbnail">
 						<a href="./ecarddetail.html">
 							<img src="./images/ecard-1.png" alt="Ecard 1">
@@ -129,7 +167,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 ecard">
+				<div class="col-md-4 ecard">
 					<div class="ecard__thumbnail">
 						<a href="./ecarddetail.html">
 							<img src="./images/ecard-1.png" alt="Ecard 1">
@@ -161,39 +199,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 ecard">
-					<div class="ecard__thumbnail">
-						<a href="./ecarddetail.html">
-							<img src="./images/ecard-1.png" alt="Ecard 1">
-						</a>
-					</div>
-					<div class="ecard__labels">
-						<span class="label">New</span>
-					</div>
-					<div class="ecard__overlay">
-						<div class="ecard__emersion">
-							<h6 class="ecard__title">Special one to remember</h6>
-							<div class="ecard__rating">
-								<img src="./images/rating-50.gif" alt="5 stars">
-							</div>
-							<div class="ecard__buttons">
-								<a href="#" class="btn-circle btn-circle--preview">
-									<i class="icon-shop24"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--post">
-									<i class="icon-heart-empty-2"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--member">
-									<i class="icon-untitled-1"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--check">
-									<i class="icon-eye"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				{{#each null}}
+				{{#each [1, 2, 4]}}
 					<div class="col-md-4 ecard__item">
 						<div class="ecard__thumbnail">
 							<a href="./ecarddetail.html">

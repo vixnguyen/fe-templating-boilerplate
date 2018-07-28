@@ -1,11 +1,19 @@
 <aside class="sidebar">
+	{{#each data}}
+		<div>alo alo</div>
+	{{/each}}
   <div class="sidebar__content">
-		<h3>Categories</h3>
-		<ul id="js-slicknav" class="categories">
-			<li class="categories__item">
+		<h3>Category</h3>
+		<ul id="js-slicknav" class="category">
+			<li class="category__item">
+				<a href="./category_c.html">Wedding Invitations</a>
+			</li>
+			<li class="category__item active">
+				<a href="./category_c.html">I love You</a>
+			</li>
+			<li class="category__item category__item--has-child">
 				<a href="./category.html">Birthday</a>
-				<i class="fa fa-next"></i>
-				<ul class="categories__child">
+				<ul class="category__child">
 					<li>
 						<a href="./category_c.html">General</a>
 					</li>
@@ -14,20 +22,28 @@
 					</li>
 				</ul>
 			</li>
-			<li class="categories__item">
+			<li class="category__item category__item--has-child">
 				<a href="./category.html">Love</a>
-				<i class="fa fa-next"></i>
-				<ul class="categories__child">
+				<ul class="category__child">
 					<li>
 						<a href="./category_c.html">Forever Love</a>
 					</li>
-					<li>
+					<li class="active">
 						<a href="./category_c.html">I love You</a>
 					</li>
 					<li>
 						<a href="./category_c.html">Send a Kiss</a>
 					</li>
 				</ul>
+			</li>
+			<li class="category__item">
+				<a href="./category_c.html">Forever Love</a>
+			</li>
+			<li class="category__item">
+				<a href="./category_c.html">I love You</a>
+			</li>
+			<li class="category__item">
+				<a href="./category_c.html">Send a Kiss</a>
 			</li>
 		</ul>
 	</div>

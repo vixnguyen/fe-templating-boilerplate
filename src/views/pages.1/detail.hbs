@@ -1,0 +1,310 @@
+{{#extend "layout"}}
+  <div class="content fullwidth">
+    {{> "partials/breadcrumbs" }}
+		<div class="page__content ecard-detail">
+			<div id="div_card_body" class="row">
+				<div class="col-md-6">
+					<div id="print_card">
+						<img src="./images/ecard-1.png" alt="Ecard 1">
+					</div>
+					<div class="ecard-detail__sharing">
+						<span class="btn btn-default no-padding sendto">
+							Send to <i class="fa fa-share-alt"></i>
+						</span>
+						<a class="btn-circle btn-circle--twitter" id="atwitter" href="javascript:;" onclick="share_to_social('twitter');"></a>
+						<a class="btn-circle btn-circle--facebook" id="afacebook" href="javascript:;" onclick="share_to_social('facebook');"></a>
+						<a class="btn-circle btn-circle--google" id="agoogleplus" href="javascript:;" onclick="share_to_social('googleplus');"></a>
+						<a class="btn-circle btn-circle--linkedin" id="alinkedin" href="javascript:;" onclick="share_to_social('linkedin');"></a>
+					</div>
+					<div class="ecard-detail__info">
+						<h1 class="">Box food love pralines</h1>
+						<h4 class="ecard-detail__price text--primary">$20</h4>
+						<div class="ecard-detail__review">
+							<span class="ecard-detail__stars">
+								<img src="./images/rating-50.gif" alt="5 stars">
+							</span>
+							<span class="ecard-detail__review"><a href="#">2 Review(s)</a></span>
+							{{!-- <span class="ecard-detail__review-add"><a href="#">Add Your Review</a></span> --}}
+							<span class="ecard-detail__sent"><a href="#">2 (Sent)</a></span>
+							<a class="btn-circle btn-circle--favorite" id="atwitter" href="javascript:;" onclick="share_to_social('twitter');"></a>
+						</div>
+						<div class="ecard-detail__widget">
+							<a class="btn-circle btn-circle--prev" id="agoogleplus" href="javascript:;" onclick="share_to_social('googleplus');"></a>
+							<a class="btn-circle btn-circle--next" id="afacebook" href="javascript:;" onclick="share_to_social('facebook');"></a>
+						</div>
+						<div class="ecard-detail__tags">
+							<span>Tags:</span>
+							<a href="#">Wireless</a>,
+							<a href="#">Built-In Microphone</a>,
+							<a href="#">Bluetooth Enabled</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="ecard-detail__markup">
+						<h3>Markup your eCard</h3>
+						<div class="ecard-detail__toolbar">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Select Skin
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Separated link</a>
+								</div>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Stamp
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Separated link</a>
+								</div>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Music
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Separated link</a>
+								</div>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Poem
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Separated link</a>
+								</div>
+							</div>
+						</div>
+						<div class="ecard-detail__editor">
+							<textarea class="form-control" name="" id="" rows="10"></textarea>
+						</div>
+						<div class="ecard-detail__action">
+							<button class="btn btn-default btn-ecardmax">Personalize and Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="show_personalize_table" class="row">
+			<div class="temp_personalize col-sm-9">
+			<form name="ecardmax_personalize" class="form-horizontal" method="post" action="index.php">
+			<input type="hidden" name="step" value="sendcard">
+			<input type="hidden" name="what" value="send_to_friends">
+			<input type="hidden" name="list_email" value="">
+			<input type="hidden" name="cs_poem" value="0">
+			<input type="hidden" name="cs_poem_align" value="center">  
+			<input type="hidden" name="cs_music_filename" value=""> 
+			<input type="hidden" name="cs_music_id" value="">
+			<input type="hidden" name="cs_skin_name" value="_Default">
+			<input type="hidden" name="cs_stamp_filename" value="_Default.gif">
+			<input type="hidden" name="cs_java" value="">
+			<input type="hidden" name="ec_id" value="506">
+			<input type="hidden" name="tw_user" value="">
+			<input type="hidden" name="tw_psw" value="">
+			<input type="hidden" name="oAuth" value="true">
+			<input type="hidden" name="embed_text" value="">
+			<div class="table_border">
+			<div class="info_card_send">
+			<div class="panel panel-default">
+			<div class="panel-heading">Sender Information</div>
+			<div class="panel-body">
+			<div class="input-group input-group-sm h-space-b-10">
+			<span class="input-group-addon" id="sizing-addon3">
+			<i class="fa fa-user"></i> <span class="only-desktop">Sender Name</span></span>
+			<!--input onkeydown="showid2('show_error_message_sender_info','none');" id="cs_from_name" class="form-control" name="cs_from_name" value="Anthony Sts Truong" type="text" readonly="readonly" aria-describedby="sizing-addon" /-->    
+
+			<input onkeydown="showid2('show_error_message_sender_info','none');" id="cs_from_name" class="form-control" name="cs_from_name" value="Anthony Sts Truong" type="text" aria-describedby="sizing-addon">    
+
+			</div>   
+			<div class="Error_Message" style="padding:5px;display:none" id="show_error_message_sender_info"></div>       
+			<div class="input-group input-group-sm">
+			<span class="input-group-addon" id="sizing-addon3">
+			@ <span class="only-desktop">Sender Email</span></span>
+			<!--input onkeydown="showid2('show_error_message_sender_info','none');"  onblur="if(!valid_email(this.value)){this.value='';ShowDivInvalidEmail('show_error_message_sender_info');}" id="cs_from_email" class="form-control" name="cs_from_email" value="anthony@ecardmax.com" type="text" readonly="readonly" aria-describedby="sizing-addon" /-->  
+
+			<input onkeydown="showid2('show_error_message_sender_info','none');" onblur="if(!valid_email(this.value)){this.value='';ShowDivInvalidEmail('show_error_message_sender_info');}" id="cs_from_email" class="form-control" name="cs_from_email" value="anthony@ecardmax.com" type="text" aria-describedby="sizing-addon">  
+
+			</div>
+			<div class="Error_Message" style="padding:5px;display:none" id="show_error_message_sender_info"></div>
+			</div>
+			</div>
+
+			<div class="panel panel-default">
+			<div class="panel-heading">Recipient Information</div>
+			<div class="panel-body">
+			<div class="form-group row ">
+			<label class="col-sm-3">Number of Recipients</label>
+			<div class="col-sm-8">
+			<div class="input-group">
+			<input aria-describedby="sizing-addon" class="form-control  input-sm no-border-r" onkeypress="return isNumberKey(event)" onfocus="original_value=this.value;" onchange="CheckFieldNumber(this.value);" id="re_num" name="re_num" value="1" type="text"> 
+			<div class="input-group-addon no-backg">
+			<small class="text-danger">Maximum is  10</small>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="form-group row ">
+			<label class="col-sm-3">Recipient Group</label>
+			<div class="col-sm-8">
+			<select aria-describedby="sizing-addon" class="form-control input-sm" onchange="AddContactGroupToList(this.value);">
+			<option value="0">Select Group</option>
+
+			</select>
+			<p class="text-right"><small>or select  recipent(s) from address book</small></p>
+			</div>
+			</div>
+
+			<div class="form-group row ">
+			<div class="col-sm-1 add-more pull-right text-left hide">
+			<a href="javascript:;" class="text-right" onclick="AddMore();">
+			<i class="fa fa-plus"></i></a>	 
+			</div>
+			<label class="col-sm-3">Recipient</label>
+			<div class="col-sm-8" id="show_recipient_loop" style="overflow: hidden; height: auto;">
+			<div class="row">
+			<div class="group-recipient col-sm-11">
+			<span class="text-danger h-space-b-10" id="show_error_message_1"></span>
+			<div class="col-sm-6 no-padding">
+			<div class="input-group h-space-b-10">
+			<span class="input-group-addon" id="sizing-addon3"><i class="fa fa-user"></i> 1</span>
+			<input rel="add-contact" onclick="abModal();" class="form-control input-sm add-contact" placeholder="Name" id="list_friend_name_1" name="list_friend_name_1" value="" type="text" onkeydown="showid2('show_error_message_1','none')">
+			</div>
+			</div>
+			<div class="col-sm-6 no-padding h-space-b-15">
+			<div class="input-group">
+			<span class="input-group-addon" id="sizing-addon3">@ 1</span>
+			<input rel="add-contact" onclick="abModal();" class="form-control input-sm add-contact" placeholder="Email" id="list_friend_email_1" name="list_friend_email_1" value="" type="text" onblur="if(!valid_email(this.value)){this.value='';ShowDivInvalidEmail('1');}" onkeydown="showid2('show_error_message_1','none')">
+			</div>
+			</div>
+			<div class="clearfix h-space-b-10"></div>
+			</div>
+			<div class="col-sm-1 add-more pull-right text-left"><a href="javascript:;" class="text-right" onclick="AddMore();"><i class="fa fa-plus"></i></a></div>
+			</div>
+			</div>
+			</div>
+
+			<div class="clearfix"></div>
+			</div>
+			</div>
+
+
+			<div class="panel panel-default">
+			<div class="panel-heading">Email Template</div>
+			<div class="panel-body">
+			<div class="form-group row ">
+			<div class="Error_Message" style="padding:5px;display:none" id="show_error_message_sender_info"></div>
+			<label class="col-sm-3">Subject</label>
+			<div class="col-sm-9">
+			<input class="form-control input-sm" onkeydown="showid2('show_error_message_sender_info','none');" id="email_subject_from_name" name="email_subject_from_name" value="Anthony Sts Truong has sent you an ECard from eCardMAX Demo" type="text"><br clear="all">
+			</div>
+			<!------MESSAGE MOVE TO TAB DESIGN CARD----->
+			<textarea name="cs_message" id="cs_message" class="cs_message elm-toggle-collapse">Your message goes here.</textarea>
+			<!------END--------------------------------->
+			</div>
+
+			<div class="form-group row ">
+			<div class="col-sm-8">
+			<div><input checked="checked" name="save_email" type="checkbox" value="1"> Auto save recipient name and email to my address book.</div>
+			<div><input name="cs_copy" id="cs_copy" type="checkbox" value="1"> Please send me a copy of this card.</div>
+			<div><input name="cs_notify" type="checkbox" value="1"> Please notify me when the recipient views card.</div>
+
+
+			</div>
+			<div class="col-sm-4">
+			<label>Delivery Date:</label>
+			<div class="form-group row  has-feedback clearfix">
+			<div class="col-sm-2 text-datepicker">
+			<input readonly="readonly" class="form-control input-sm datepicker hasDatepicker" type="text" name="time_end_textbox" id="time_end_textbox" value="6/18/2018"> 
+			<span class="fa fa-calendar-plus-o form-control-feedback" aria-hidden="true"></span>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+
+			</div>
+			</div>
+			<!-- End Column Personal info-->
+			</form>    
+			<div id="show_change_next_step_fav_toolbar" style="position:relative; z-index:99999999" class="sendcard-toolbar">
+			<span onclick="PreviewCard();" class="btn btn-default btn-sm">
+			<i class="fa fa-eye padding5"></i>Preview Card</span>
+			<span onclick="SendToFriends();" class="btn btn-default btn-sm btn-my-site">
+			<i class="fa fa-send padding5"></i>Send Now</span>
+			</div>
+			</div>
+			<div class="recepient_address col-sm-3">
+			<div class="list-group only-desktop">
+			<a href="#" class="list-group-item active">
+			Address Book
+			</a>
+			<div id="table_addressbook">
+			<a href="javascript:;" class="list-group-item" onclick="AddContactToList('103');">
+			a21 abc<br>
+			<small>anthony@ecardmax.com</small>
+			</a>
+			<div style="display:none" id="contactname103">a21 abc</div>
+			<div style="display:none" id="contactemail103">anthony@ecardmax.com</div><a href="javascript:;" class="list-group-item" onclick="AddContactToList('898');">
+			Wasi Wasi Truong<br>
+			<small>wasimodo@gmail.com</small>
+			</a>
+			<div style="display:none" id="contactname898">Wasi Wasi Truong</div>
+			<div style="display:none" id="contactemail898">wasimodo@gmail.com</div><a href="javascript:;" class="list-group-item" onclick="AddContactToList('149');">
+			W W<br>
+			<small>wasimodo98@yahoo.com</small>
+			</a>
+			<div style="display:none" id="contactname149">W W</div>
+			<div style="display:none" id="contactemail149">wasimodo98@yahoo.com</div>
+			</div><div id="table_addressbook_group" style="display:none">
+
+			</div>
+			</div>
+
+			<div class="list-group" id="groupaddress" style="display: none;">
+			<a href="#" class="list-group-item active">
+			Address Book
+			</a>
+			<div id="table_addressbook">
+			<a href="javascript:;" class="list-group-item" onclick="AddContactToList('103');">
+			a21 abc<br>
+			<small>anthony@ecardmax.com</small>
+			</a>
+			<div style="display:none" id="contactname103">a21 abc</div>
+			<div style="display:none" id="contactemail103">anthony@ecardmax.com</div><a href="javascript:;" class="list-group-item" onclick="AddContactToList('898');">
+			Wasi Wasi Truong<br>
+			<small>wasimodo@gmail.com</small>
+			</a>
+			<div style="display:none" id="contactname898">Wasi Wasi Truong</div>
+			<div style="display:none" id="contactemail898">wasimodo@gmail.com</div><a href="javascript:;" class="list-group-item" onclick="AddContactToList('149');">
+			W W<br>
+			<small>wasimodo98@yahoo.com</small>
+			</a>
+			<div style="display:none" id="contactname149">W W</div>
+			<div style="display:none" id="contactemail149">wasimodo98@yahoo.com</div>
+			</div><div id="table_addressbook_group" style="display:none">
+
+			</div>
+			</div>
+			</div>
+			</div>
+		</div>
+  </div>
+{{/extend}}

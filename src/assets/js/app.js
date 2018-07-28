@@ -96,4 +96,16 @@ new Vue().$mount('#app');
     $('.menu').toggleClass('menu--mobile')
     e.preventDefault()
   })
+
+  $('#js-slicknav > li').click((elm) => {
+    $(elm.target).toggleClass('in')
+  })
+
+  $(window).scroll(() => {
+    if ($(window).scrollTop() >= 80) {
+      $('.js-header').addClass('header--sticky')
+    } else {
+      $('.js-header').removeClass('header--sticky')
+    }
+  })
 })(window.jQuery)

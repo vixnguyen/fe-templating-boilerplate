@@ -1,229 +1,240 @@
-{{#extend "layout"}}
-  {{> "partials/sidebar" }}
-  <div class="content">
-    {{> "partials/breadcrumbs" }}
-    <h1 class="page__title">Birthday</h1>
-		<div class="page__content">
-			<div class="row">
-				<div class="col-md-6 ecard">
-					<div class="ecard__thumbnail">
-						<a href="./ecarddetail.html">
-							<img src="./images/ecard-1.png" alt="Ecard 1">
-						</a>
-					</div>
-					<div class="ecard__labels">
-						<span class="label">New</span>
-					</div>
-					<div class="ecard__overlay">
-						<div class="ecard__emersion">
-							<h6 class="ecard__title">Special one to remember</h6>
-              <div class="ecard__price">
-								$20
-							</div>
-							<div class="ecard__rating">
-								<img src="./images/rating-50.gif" alt="5 stars">
-							</div>
-							<div class="ecard__buttons">
-								<a href="#" class="btn-circle btn-circle--preview"></a>
-								<a href="#" class="btn-circle btn-circle--post"></a>
-								<a href="#" class="btn-circle btn-circle--member"></a>
-								<a href="#" class="btn-circle btn-circle--check"></a>
-								<a href="./detail.html" class="btn-circle btn-circle--detail"></a>
-							</div>
+---
+layout: layout.hbs
+---
+{{> sidebar }}
+<div class="content">
+	{{> breadcrumbs }}
+	<h1 class="page__title">Birthday</h1>
+	<div class="page__content">
+		{{#loop 3 }}
+			<div>Tiger</div>
+		{{/loop}}
+		<div class="entry">
+			{{#if author}}
+				<h1>{{firstName}} {{lastName}}</h1>
+			{{else}}
+				<h1>Unknown Author</h1>
+			{{/if}}
+		</div>
+		{{!-- <div class="row">
+			<div class="col-md-6 ecard">
+				<div class="ecard__thumbnail">
+					<a href="./ecarddetail.html">
+						<img src="./images/ecard-1.png" alt="Ecard 1">
+					</a>
+				</div>
+				<div class="ecard__labels">
+					<span class="label">New</span>
+				</div>
+				<div class="ecard__overlay">
+					<div class="ecard__emersion">
+						<h6 class="ecard__title">Special one to remember</h6>
+						<div class="ecard__price">
+							$20
+						</div>
+						<div class="ecard__rating">
+							<img src="./images/rating-50.gif" alt="5 stars">
+						</div>
+						<div class="ecard__buttons">
+							<a href="#" class="btn-circle btn-circle--preview" data-toggle="modal" data-target="#ec-modal"></a>
+							<a href="#" class="btn-circle btn-circle--post"></a>
+							<a href="#" class="btn-circle btn-circle--member"></a>
+							<a href="#" class="btn-circle btn-circle--check"></a>
+							<a href="./detail.html" class="btn-circle btn-circle--detail"></a>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 ecard">
-					<div class="ecard__thumbnail">
-						<a href="./ecarddetail.html">
-							<img src="./images/ecard-1.png" alt="Ecard 1">
-						</a>
-					</div>
-					<div class="ecard__labels">
-						<span class="label">New</span>
-					</div>
-					<div class="ecard__overlay">
-						<div class="ecard__emersion">
-							<h6 class="ecard__title">Special one to remember</h6>
-							<div class="ecard__rating">
-								<img src="./images/rating-50.gif" alt="5 stars">
-							</div>
-							<div class="ecard__buttons">
-								<a href="#" class="btn-circle btn-circle--preview">
-									<i class="icon-shop24"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--post">
-									<i class="icon-heart-empty-2"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--member">
-									<i class="icon-untitled-1"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--check">
-									<i class="icon-eye"></i>
-								</a>
-							</div>
-						</div>
-					</div>
+			</div>
+			<div class="col-md-6 ecard">
+				<div class="ecard__thumbnail">
+					<a href="./ecarddetail.html">
+						<img src="./images/ecard-1.png" alt="Ecard 1">
+					</a>
 				</div>
-				<div class="col-md-6 ecard">
-					<div class="ecard__thumbnail">
-						<a href="./ecarddetail.html">
-							<img src="./images/ecard-1.png" alt="Ecard 1">
-						</a>
-					</div>
-					<div class="ecard__labels">
-						<span class="label">New</span>
-					</div>
-					<div class="ecard__overlay">
-						<div class="ecard__emersion">
-							<h6 class="ecard__title">Special one to remember</h6>
-							<div class="ecard__rating">
-								<img src="./images/rating-50.gif" alt="5 stars">
-							</div>
-							<div class="ecard__buttons">
-								<a href="#" class="btn-circle btn-circle--preview">
-									<i class="icon-shop24"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--post">
-									<i class="icon-heart-empty-2"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--member">
-									<i class="icon-untitled-1"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--check">
-									<i class="icon-eye"></i>
-								</a>
-							</div>
-						</div>
-					</div>
+				<div class="ecard__labels">
+					<span class="label">New</span>
 				</div>
-				<div class="col-md-6 ecard">
-					<div class="ecard__thumbnail">
-						<a href="./ecarddetail.html">
-							<img src="./images/ecard-1.png" alt="Ecard 1">
-						</a>
-					</div>
-					<div class="ecard__labels">
-						<span class="label">New</span>
-					</div>
-					<div class="ecard__overlay">
-						<div class="ecard__emersion">
-							<h6 class="ecard__title">Special one to remember</h6>
-							<div class="ecard__rating">
-								<img src="./images/rating-50.gif" alt="5 stars">
-							</div>
-							<div class="ecard__buttons">
-								<a href="#" class="btn-circle btn-circle--preview">
-									<i class="icon-shop24"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--post">
-									<i class="icon-heart-empty-2"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--member">
-									<i class="icon-untitled-1"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--check">
-									<i class="icon-eye"></i>
-								</a>
-							</div>
+				<div class="ecard__overlay">
+					<div class="ecard__emersion">
+						<h6 class="ecard__title">Special one to remember</h6>
+						<div class="ecard__rating">
+							<img src="./images/rating-50.gif" alt="5 stars">
 						</div>
-					</div>
-				</div>
-				<div class="col-md-6 ecard">
-					<div class="ecard__thumbnail">
-						<a href="./ecarddetail.html">
-							<img src="./images/ecard-1.png" alt="Ecard 1">
-						</a>
-					</div>
-					<div class="ecard__labels">
-						<span class="label">New</span>
-					</div>
-					<div class="ecard__overlay">
-						<div class="ecard__emersion">
-							<h6 class="ecard__title">Special one to remember</h6>
-							<div class="ecard__rating">
-								<img src="./images/rating-50.gif" alt="5 stars">
-							</div>
-							<div class="ecard__buttons">
-								<a href="#" class="btn-circle btn-circle--preview">
-									<i class="icon-shop24"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--post">
-									<i class="icon-heart-empty-2"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--member">
-									<i class="icon-untitled-1"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--check">
-									<i class="icon-eye"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 ecard">
-					<div class="ecard__thumbnail">
-						<a href="./ecarddetail.html">
-							<img src="./images/ecard-1.png" alt="Ecard 1">
-						</a>
-					</div>
-					<div class="ecard__labels">
-						<span class="label">New</span>
-					</div>
-					<div class="ecard__overlay">
-						<div class="ecard__emersion">
-							<h6 class="ecard__title">Special one to remember</h6>
-							<div class="ecard__rating">
-								<img src="./images/rating-50.gif" alt="5 stars">
-							</div>
-							<div class="ecard__buttons">
-								<a href="#" class="btn-circle btn-circle--preview">
-									<i class="icon-shop24"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--post">
-									<i class="icon-heart-empty-2"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--member">
-									<i class="icon-untitled-1"></i>
-								</a>
-								<a href="#" class="btn-circle btn-circle--check">
-									<i class="icon-eye"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				{{#each null}}
-					<div class="col-md-4 ecard__item">
-						<div class="ecard__thumbnail">
-							<a href="./ecarddetail.html">
-								<img src="./images/ecard-1.png" alt="Ecard 1">
+						<div class="ecard__buttons">
+							<a href="#" class="btn-circle btn-circle--preview">
+								<i class="icon-shop24"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--post">
+								<i class="icon-heart-empty-2"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--member">
+								<i class="icon-untitled-1"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--check">
+								<i class="icon-eye"></i>
 							</a>
 						</div>
-						<div class="ecard__labels">
-							<span class="label label-new">New</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 ecard">
+				<div class="ecard__thumbnail">
+					<a href="./ecarddetail.html">
+						<img src="./images/ecard-1.png" alt="Ecard 1">
+					</a>
+				</div>
+				<div class="ecard__labels">
+					<span class="label">New</span>
+				</div>
+				<div class="ecard__overlay">
+					<div class="ecard__emersion">
+						<h6 class="ecard__title">Special one to remember</h6>
+						<div class="ecard__rating">
+							<img src="./images/rating-50.gif" alt="5 stars">
 						</div>
-						<div class="ecard__overlay">
-							<div class="ecard__emersion">
-								<div class="ecard__buttons">
-									<a href="#" class="tt-btn colorize-btn5 ecard__buttons--preview">
-										<i class="icon-shop24"></i>
-									</a>
-									<a href="#" class="tt-btn colorize-btn4 ecard__buttons--post">
-										<i class="icon-heart-empty-2"></i>
-									</a>
-									<a href="#" class="tt-btn colorize-btn4 ecard__buttons--member">
-										<i class="icon-untitled-1"></i>
-									</a>
-									<a href="#" class="tt-btn colorize-btn4 ecard__buttons--check">
-										<i class="icon-eye"></i>
-									</a>
-								</div>
+						<div class="ecard__buttons">
+							<a href="#" class="btn-circle btn-circle--preview">
+								<i class="icon-shop24"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--post">
+								<i class="icon-heart-empty-2"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--member">
+								<i class="icon-untitled-1"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--check">
+								<i class="icon-eye"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 ecard">
+				<div class="ecard__thumbnail">
+					<a href="./ecarddetail.html">
+						<img src="./images/ecard-1.png" alt="Ecard 1">
+					</a>
+				</div>
+				<div class="ecard__labels">
+					<span class="label">New</span>
+				</div>
+				<div class="ecard__overlay">
+					<div class="ecard__emersion">
+						<h6 class="ecard__title">Special one to remember</h6>
+						<div class="ecard__rating">
+							<img src="./images/rating-50.gif" alt="5 stars">
+						</div>
+						<div class="ecard__buttons">
+							<a href="#" class="btn-circle btn-circle--preview">
+								<i class="icon-shop24"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--post">
+								<i class="icon-heart-empty-2"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--member">
+								<i class="icon-untitled-1"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--check">
+								<i class="icon-eye"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 ecard">
+				<div class="ecard__thumbnail">
+					<a href="./ecarddetail.html">
+						<img src="./images/ecard-1.png" alt="Ecard 1">
+					</a>
+				</div>
+				<div class="ecard__labels">
+					<span class="label">New</span>
+				</div>
+				<div class="ecard__overlay">
+					<div class="ecard__emersion">
+						<h6 class="ecard__title">Special one to remember</h6>
+						<div class="ecard__rating">
+							<img src="./images/rating-50.gif" alt="5 stars">
+						</div>
+						<div class="ecard__buttons">
+							<a href="#" class="btn-circle btn-circle--preview">
+								<i class="icon-shop24"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--post">
+								<i class="icon-heart-empty-2"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--member">
+								<i class="icon-untitled-1"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--check">
+								<i class="icon-eye"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 ecard">
+				<div class="ecard__thumbnail">
+					<a href="./ecarddetail.html">
+						<img src="./images/ecard-1.png" alt="Ecard 1">
+					</a>
+				</div>
+				<div class="ecard__labels">
+					<span class="label">New</span>
+				</div>
+				<div class="ecard__overlay">
+					<div class="ecard__emersion">
+						<h6 class="ecard__title">Special one to remember</h6>
+						<div class="ecard__rating">
+							<img src="./images/rating-50.gif" alt="5 stars">
+						</div>
+						<div class="ecard__buttons">
+							<a href="#" class="btn-circle btn-circle--preview">
+								<i class="icon-shop24"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--post">
+								<i class="icon-heart-empty-2"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--member">
+								<i class="icon-untitled-1"></i>
+							</a>
+							<a href="#" class="btn-circle btn-circle--check">
+								<i class="icon-eye"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{#each null}}
+				<div class="col-md-4 ecard__item">
+					<div class="ecard__thumbnail">
+						<a href="./ecarddetail.html">
+							<img src="./images/ecard-1.png" alt="Ecard 1">
+						</a>
+					</div>
+					<div class="ecard__labels">
+						<span class="label label-new">New</span>
+					</div>
+					<div class="ecard__overlay">
+						<div class="ecard__emersion">
+							<div class="ecard__buttons">
+								<a href="#" class="tt-btn colorize-btn5 ecard__buttons--preview">
+									<i class="icon-shop24"></i>
+								</a>
+								<a href="#" class="tt-btn colorize-btn4 ecard__buttons--post">
+									<i class="icon-heart-empty-2"></i>
+								</a>
+								<a href="#" class="tt-btn colorize-btn4 ecard__buttons--member">
+									<i class="icon-untitled-1"></i>
+								</a>
+								<a href="#" class="tt-btn colorize-btn4 ecard__buttons--check">
+									<i class="icon-eye"></i>
+								</a>
 							</div>
 						</div>
 					</div>
-				{{/each}}
-			</div>
-		</div>
-  </div>
-{{/extend}}
+				</div>
+			{{/each}}
+		</div> --}}
+	</div>
+</div>

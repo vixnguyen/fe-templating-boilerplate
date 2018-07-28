@@ -3,7 +3,7 @@ $icons: preview, lock, facebook, twitter, check, member, post, unlock, pinterest
 @each $icon in $icons {
   .btn-circle {
     &--#{$icon} {
-      @include faicon(#{$icon});
+      @include btn-icon(#{$icon});
     }
   }
 }

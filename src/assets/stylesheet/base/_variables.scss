@@ -9,6 +9,12 @@ $slick-loader-path: "~slick-carousel/slick/";
 $slick-arrow-color: black;
 $slick-dot-color: black;
 
+$layout-space: 40px;
+$sidebar-width: 360px;
+$logo-size: 180px;
+$menu-size-max: 80px;
+$menu-size-min: 60px;
+
 $color: (
   border: #ebebeb,
   primary: #f18048,
@@ -44,5 +50,7 @@ $fa-icon: (
   favorite: "\f004",
   next: "\f054",
   prev: "\f053",
-  bars: "\f0c9"
+  bars: "\f0c9",
+  angle-right: "\f105",
+  angle-down: "\f107"
 );
