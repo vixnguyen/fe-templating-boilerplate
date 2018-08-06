@@ -3,48 +3,22 @@
 		<div>alo alo</div>
 	{{/each}}
   <div class="sidebar__content">
-		<h3>Category</h3>
+		<h3>Shop By Brand</h3>
 		<ul id="js-slicknav" class="category">
-			<li class="category__item">
-				<a href="./category_c.html">Wedding Invitations</a>
-			</li>
-			<li class="category__item active">
-				<a href="./category_c.html">I love You</a>
-			</li>
-			<li class="category__item category__item--has-child">
-				<a href="./category.html">Birthday</a>
-				<ul class="category__child">
-					<li>
-						<a href="./category_c.html">General</a>
-					</li>
-					<li>
-						<a href="./category_c.html">Cute</a>
-					</li>
-				</ul>
-			</li>
-			<li class="category__item category__item--has-child">
-				<a href="./category.html">Love</a>
-				<ul class="category__child">
-					<li>
-						<a href="./category_c.html">Forever Love</a>
-					</li>
-					<li class="active">
-						<a href="./category_c.html">I love You</a>
-					</li>
-					<li>
-						<a href="./category_c.html">Send a Kiss</a>
-					</li>
-				</ul>
-			</li>
-			<li class="category__item">
-				<a href="./category_c.html">Forever Love</a>
-			</li>
-			<li class="category__item">
-				<a href="./category_c.html">I love You</a>
-			</li>
-			<li class="category__item">
-				<a href="./category_c.html">Send a Kiss</a>
-			</li>
+			{{#each categories as |cat key|}}
+				<li class="category__item {{cat.active}} category__item--{{cat.has_child}}">
+					<a href="./category.html">{{cat.name}}</a>
+					{{#if cat.child}}
+						<ul class="category__child">
+							{{#each cat.child as |sub key|}}
+								<li>
+									<a href="./category.html">{{sub.name}}</a>
+								</li>
+							{{/each}}
+						</ul>
+					{{/if}}
+				</li>
+			{{/each}}
 		</ul>
 	</div>
 </aside>

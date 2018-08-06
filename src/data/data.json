@@ -1,6 +1,88 @@
 {
   "categories": [
-    1, 2, 5, 6
+    {
+      "name": "Adidas",
+      "active": ""
+    },
+    {
+      "name": "Brooklyn Watch Co.",
+      "active": ""
+    },
+    {
+      "name": "Calvin Klein",
+      "active": "",
+      "has_child": "has-child",
+      "child": [
+        {
+          "name": "Calvin Klein Men",
+          "active": ""
+        },
+        {
+          "name": "Calvin Klein Women",
+          "active": ""
+        }
+      ]
+    },
+    {
+      "name": "Daniel Wellington",
+      "active": "active"
+    },
+    {
+      "name": "Jaeger LeCoultre",
+      "active": ""
+    },
+    {
+      "name": "Porsche Design",
+      "active": "",
+      "has_child": "has-child",
+      "child": [
+        {
+          "name": "Porsche Design Men",
+          "active": ""
+        },
+        {
+          "name": "Porsche Design Women",
+          "active": ""
+        }
+      ]
+    },
+    {
+      "name": "Toy Watch",
+      "active": ""
+    }
+  ],
+  "products": [
+    {
+      "name": "Classic",
+      "image": "./images/sample/products/1.jpg",
+      "price": "$219"
+    },
+    {
+      "name": "Modest",
+      "image": "./images/sample/products/2.jpg",
+      "price": "$199"
+    },
+    {
+      "name": "Classic",
+      "image": "./images/sample/products/1.jpg",
+      "price": "$219"
+    }
+  ],
+  "contact_us": [
+    "Customer Service",
+    "Update Your Email Preferences",
+    "Trade In Your Watch",
+    "Sell us Your Rolex",
+    "Sell us Your Watch"
+  ],
+  "help": [
+    "Order Information",
+    "Shipping Options",
+    "International Shipping",
+    "Payment Options",
+    "Returning & Exchanging",
+    "Product Warranty",
+    "Repair Center"
   ],
   "title": "Homepage"
 }

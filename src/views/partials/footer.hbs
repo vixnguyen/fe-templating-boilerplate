@@ -2,68 +2,48 @@
   <div class="footer-content container">
     <div class="row">
       <div class="col-md-2">
-        {{!-- <img class="img-white" src="./images/logo.png" alt="eCardMAX"> --}}
+        <a href="/">
+          <img class="img-white" src="./images/logo.png" alt="Shop">
+        </a>
       </div>
       <div class="col-lg-6">
         <div class="row">
           <div class="col-md-4">
             <ul>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/home.html">Home</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/invitation.html" class="footer__link">Invitations</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/media-grabber.html" class="footer__link">Media Grabber</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/black-list.html" class="footer__link">Black List</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/feedback.html"  class="footer__link">Contact Us</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/private-policy.html" class="footer__link">Privacy Policy</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/term-of-service.html" class="footer__link">Terms of Service</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/help.html" class="footer__link">Help</a></li>
+              {{#each contact_us}}
+                <li><a href="#">{{this}}</a></li>
+              {{/each}}
             </ul>
           </div>
           <div class="col-md-4">
             <ul>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/my-account.html" class="footer__link">My Account</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/address-book.html" class="footer__link">Address Book</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/calendar.html" class="footer__link">Calendar</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/reminder.html" class="footer__link">Event Reminder</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/my-album.html" class="footer__link">My Albums</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/favorite.html" class="footer__link">Favorites</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/history.html" class="footer__link">History</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/birthday-alert.html" class="footer__link">Birthday Alert</a></li>
-              <li><a href="https://ecardmax.com/ecardmaxdemo/send-video-card.html" class="footer__link">Send Video Card</a></li>
+              {{#each help}}
+                <li><a href="#">{{this}}</a></li>
+              {{/each}}
             </ul>
           </div>
           <div class="col-md-4">
             <ul>
               <li>
-                <i class="fa fa-calendar"></i> <strong> June</strong>
-                <a href="#" class="footer__link block" >04 Independence Day</a>
+                <i class="fa fa-calendar"></i> <strong> Aug 11st</strong>
+                <a href="#" class="footer__link block" >Up to 60% off</a>
               </li>
               <li>
-                <i class="fa fa-calendar"></i> <strong> June</strong>
-                <a href="#" class="footer__link block" >04 Independence Day</a>
+                <i class="fa fa-calendar"></i> <strong>  Aug 28th</strong>
+                <a href="#" class="footer__link block" >+ Free Shipping, Extra 15 percent or 10 percent</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
       <div class="col-lg-4">
-        {{!-- <div class="footer__widget">
-          <form method="POST" class="searchform" action="index.php">
-            <input type="hidden" name="step" value="pickup">
-            <h4 class="h2-subscribe">Pick up your eCard</h4>
-            <input placeholder="Enter your card ID number" type="text" name="cs_id" value="">
-            <button type="submit" class="btn btn-default"></button>
-          </form>
-        </div> --}}
         <div class="footer__widget">
           <h5 class="footer__title">Newsletter Signup</h5>
           <div class="footer__description">
               Get the most recent updates from our site and be updated your self...</div>
-          <form name="ecardmax_newsletter2" method="post" action="index.php" class="form-single">
-            <input type="hidden" name="step" value="newsletter">
-            <input type="hidden" name="what" value="">
-            <input onkeypress="return noEnterKey(event)" type="hidden" name="list_name" placeholder="Your Name">
-            <input class="form-control" onkeypress="return noEnterKey(event)" type="text" name="list_email" placeholder="Your Email">
-            <button type="button" class="btn btn-default" onclick="Subscribe2();">Subscribe!</button>
+          <form name="ecardmax_newsletter2" method="post" action="#" class="form-single">
+            <input class="form-control" type="text" name="list_email" placeholder="Your Email">
+            <button type="button" class="btn btn-default">Subscribe!</button>
           </form>
         </div>
         <div class="footer__social">
@@ -84,7 +64,7 @@
         </div>
       </div>
       <div class="col-md-12">
-        <a class="link--secondary" href="#">Copyright © 1999-2018, ECARDMAX.COM</a>
+        <a class="link--secondary" href="#">Copyright © 2018, FRONTEND</a>
       </div>
     </div>
   </div>

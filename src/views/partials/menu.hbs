@@ -1,54 +1,35 @@
-{{!-- <div class="header__menu">
+<div class="header__menu">
   <nav class="menu-container">
     <ul class="menu">
       <li>
-        <a class="menu__link--l1 {{active-route 'index.html'}}" href="./index.html">Home</a>
+        <a class="menu__link--l1 " href="./index.html">Home</a>
       </li>
       <li>
-        <a class="menu__link--l1" class="{{active-route 'category.html'}}" href="./category.html">Category</a>
+        <a class="menu__link--l1" class="" href="./category.html">Categories</a>
         <ul class="menu__child--l1">
-          {{#loop 5}}
+          {{#each categories as |cat key|}}
             <li>
-              <a class="{{active-route 'category.html'}}" href="./category.html">Category Level 2</a>
-              <ul>
-                {{#loop 2}}
-                  <li>
-                    <a class="{{active-route 'category.html'}}" href="./category.html">Category level 3</a>
-                    
-                  </li>
-                {{/loop}}
-              </ul>
+              <a href="./category.html">{{cat.name}}</a>
+              {{#if cat.child}}
+                <ul>
+                  {{#each cat.child as |sub key|}}
+                    <li>
+                      <a href="./category.html">{{sub.name}}</a>
+                    </li>
+                  {{/each}}
+                </ul>
+              {{/if}}
             </li>
-          {{/loop}}
+          {{/each}}
         </ul>
       </li>
       <li>
-        <a class="menu__link--l1 {{active-route 'index.html'}}" href="./index.html">Invitations</a>
-        <ul class="menu__child--l1">
-          {{#loop 4}}
-            <li>
-              <a class="{{active-route 'category_c.html'}}" href="./category_c.html">Invitations Level 2</a>
-              <ul>
-                {{#loop 3}}
-                  <li>
-                    <a class="{{active-route 'category_c.html'}}" href="./category_c.html">Invitations Level 3</a>
-                  </li>
-                {{/loop}}
-              </ul>
-            </li>
-          {{/loop}}
-        </ul>
+        <a class="menu__child--l1" href="./index.html">Featured</a>
       </li>
       <li>
-        <a class="menu__child--l1 {{active-route 'index1.html'}}" href="./index.html">Tell Friends</a>
-      </li>
+        <a class="menu__child--l1" href="./index.html">Top-Rated</a></li>
       <li>
-        <a class="menu__child--l1 {{active-route 'index2.html'}}" href="./index.html">Popular</a>
-      </li>
-      <li>
-        <a class="menu__child--l1 {{active-route 'index3.html'}}" href="./index.html">Top-Rated</a></li>
-      <li>
-        <a class="menu__child--l1 {{active-route 'index4.html'}}" href="./index.html">New</a></li>
+        <a class="menu__child--l1" href="./index.html">Contact</a></li>
     </ul>
   </nav>
-</div> --}}
+</div>
