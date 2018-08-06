@@ -20,37 +20,7 @@ handlebars.registerHelper('loop', (n, block) => {
   }
   return accum
 })
-const routes = [
-  {
-    title: 'Home',
-    page: 'index'
-  },
-  // {
-  //   title: 'About',
-  //   page: 'about'
-  // },
-  // {
-  //   title: 'Contact',
-  //   page: 'contact'
-  // },
-  {
-    title: 'Category',
-    page: 'category',
-    script: 'category'
-  },
-  // {
-  //   title: 'Detail',
-  //   page: 'detail'
-  // },
-  // {
-  //   title: 'Sub Category',
-  //   page: 'category_c'
-  // },
-  // {
-  //   title: 'Contact',
-  //   page: 'contact'
-  // }
-];
+const routes = require('./src/routing/app.json')
 
 let cssLoaders = [
   production ? MiniCssExtractPlugin.loader : 'vue-style-loader',
@@ -158,11 +128,11 @@ module.exports = {
             }
           },
           {
-            loader: path.join(__dirname, 'src/views', 'helpers/extend.js'),
+            loader: path.join(__dirname, 'src/task', 'assemble-loader.js'),
             options: {
               layouts: path.resolve('./src/views/layout.hbs'),
               partials: path.resolve('./src/views/partials/*.hbs'),
-              data: path.resolve('./src/data/category.json')
+              data: path.resolve('./src/data/data.json')
             }
           }
         ]
@@ -198,7 +168,11 @@ module.exports = {
       {
         from: 'src/assets/images',
         to: 'images'
-      }
+      },
+      {
+        from: 'node_modules/font-awesome/fonts',
+        to: 'css/fonts'
+      },
     ], {})
   ],
   resolve: {
@@ -218,7 +192,6 @@ module.exports = {
     hot: true
   }
 }
-
 routes.forEach((route) => {
   module.exports.plugins.push(
     new HtmlWebpackPlugin({

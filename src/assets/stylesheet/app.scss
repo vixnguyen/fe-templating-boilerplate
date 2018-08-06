@@ -8,12 +8,6 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 @import "~font-awesome/scss/font-awesome";
-@import "~bootstrap-vue/dist/bootstrap-vue.css";
-
-// Plugins
-@import "~sweetalert2/src/sweetalert2";
-@import "~slick-carousel/slick/slick";
-@import "~slick-carousel/slick/slick-theme";
 
 @import "base/base";
 @import "layout/all";
@@ -21,10 +15,6 @@
 @import "element/all";
 @import "page/all";
 
-/* Space out content a bit */
-[v-cloak] {
-  display: none;
-}
 .container {
   padding: 0 40px;
   width: 100%;

@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Home",
+    "page": "index"
+  },
+  {
+    "title": "Category",
+    "page": "category"
+  }
+]
