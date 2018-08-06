@@ -13,8 +13,6 @@
   "author": "Adrien Beaudouin",
   "license": "MIT",
   "devDependencies": {
-    "assemble-webpack": "^3.0.3",
-    "assemble-webpack-loader": "^0.1.0",
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
@@ -60,12 +58,14 @@
     "webpack-notifier": "^1.6.0"
   },
   "dependencies": {
+    "assemble": "^0.24.3",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.1",
     "bootstrap-vue": "^2.0.0-rc.10",
     "font-awesome": "^4.7.0",
     "imports-loader": "^0.8.0",
     "jquery": "^3.3.1",
+    "loader-utils": "^1.1.0",
     "popper.js": "^1.14.3",
     "reset-css": "^4.0.1",
     "slick-carousel": "^1.8.1",

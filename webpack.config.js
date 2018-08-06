@@ -33,11 +33,11 @@ const routes = [
   //   title: 'Contact',
   //   page: 'contact'
   // },
-  // {
-  //   title: 'Category',
-  //   page: 'category',
-  //   script: 'category'
-  // },
+  {
+    title: 'Category',
+    page: 'category',
+    script: 'category'
+  },
   // {
   //   title: 'Detail',
   //   page: 'detail'
@@ -154,50 +154,19 @@ module.exports = {
               precompileOptions: {
                 knownHelpersOnly: false,
               },
-              rootRelative: '../',
-              helperDirs: [
-                path.join(__dirname, 'src/views', 'helpers')
-              ]
+              rootRelative: '../'
             }
           },
           {
-            loader: 'assemble-webpack-loader',
+            loader: path.join(__dirname, 'src/views', 'helpers/extend.js'),
             options: {
               layouts: path.resolve('./src/views/layout.hbs'),
-              partials: path.resolve('./src/views/partials/*.hbs')
+              partials: path.resolve('./src/views/partials/*.hbs'),
+              data: path.resolve('./src/data/category.json')
             }
           }
-          // ,
-          // {
-          //   loader: 'handlebars-loader?extensions=hbs',
-          //   options: {
-          //     precompileOptions: {
-          //       knownHelpersOnly: false,
-          //     },
-          //     rootRelative: '../',
-          //     helperDirs: [
-          //       path.join(__dirname, 'src/views', 'helpers')
-          //     ]
-          //   }
-          // }
         ]
       }
-      // {
-      //   test: /\.hbs$/,
-      //   loader: 'handlebars-loader?extensions=hbs',
-      //   options: {
-      //     precompileOptions: {
-      //       knownHelpersOnly: false,
-      //     },
-      //     rootRelative: '../',
-      //     partialDirs: [
-      //       path.join(__dirname, 'src/views', '*')
-      //     ],
-      //     helperDirs: [
-      //       path.join(__dirname, 'src/views', 'helpers')
-      //     ]
-      //   }
-      // }
     ]
   },
   optimization: {
@@ -253,8 +222,6 @@ module.exports = {
 routes.forEach((route) => {
   module.exports.plugins.push(
     new HtmlWebpackPlugin({
-      title: route.title,
-      data: [1, 2, 3, 4],
       filename: `${route.page}.html`,
       template: `./src/views/pages/${route.page}.hbs`,
       inject: true,
