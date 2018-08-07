@@ -33,7 +33,7 @@ Compile all JS application into redistributable static files into `dist` folder.
 #### Src
 The main folder for development progress
 * `assets` for stylesheet and static file and you usually work on `stylesheet` folder, you can actually replace codes inside this folder by other what you think better.
-* `data` is a folder that declaring data what use in the template to avoid hard code, duplicate and more utilities.
+* `data` is a folder that declaring data what use in the template to avoid hard code, duplicate and more useful.
 * `routing` is a folder that defining pages on your project
 * `task` is a folder that creates some task and loader for the build time
 * `views` is a folder contained your template, it includes the main sections such as `layout`, `pages` and `partials`, you must comply with this structure to make sure your code works well.
