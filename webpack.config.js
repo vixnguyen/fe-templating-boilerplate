@@ -3,7 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const package = require('./package.json')
 
-const { VueLoaderPlugin } = require('vue-loader')
+// const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const WebpackNotifierPlugin = require('webpack-notifier')
@@ -73,41 +73,41 @@ module.exports = {
           }
         ])
       },
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre'
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
+      // {
+      //   test: /\.(js|vue)$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre'
+      // },
+      // {
+      //   test: /\.vue$/,
+      //   loader: 'vue-loader'
+      // },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
-      {
-        test: /\.html$/,
-        loader: 'html-loader'
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[name].[ext]?[hash]'
-            }
-          },
-          {
-            loader: 'img-loader',
-            options: {
-              enabled: production
-            }
-          }
-        ]
-      },
+      // {
+      //   test: /\.html$/,
+      //   loader: 'html-loader'
+      // },
+      // {
+      //   test: /\.(png|jpe?g|gif)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: 'images/[name].[ext]?[hash]'
+      //       }
+      //     },
+      //     {
+      //       loader: 'img-loader',
+      //       options: {
+      //         enabled: production
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.(woff2?|ttf|eot|svg|otf)$/,
         loader: 'file-loader',
@@ -118,15 +118,6 @@ module.exports = {
       {
         test: /\.hbs$/,
         use: [
-          { 
-            loader: 'handlebars-loader?extensions=hbs',
-            options: {
-              precompileOptions: {
-                knownHelpersOnly: false,
-              },
-              rootRelative: '../'
-            }
-          },
           {
             loader: path.join(__dirname, 'src/task', 'assemble-loader.js'),
             options: {
@@ -154,7 +145,7 @@ module.exports = {
       Popper: ['popper.js', 'default'],
       slicknav: 'slicknav/dist/jquery.slicknav'
     }),
-    new VueLoaderPlugin(),
+    // new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[chunkhash].css'
     }),

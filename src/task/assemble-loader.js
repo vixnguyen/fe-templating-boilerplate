@@ -2,7 +2,7 @@ const assemble = require('assemble')
 const loaderUtils = require('loader-utils')
 const app = assemble()
 
-function assembleLoader(content) {
+module.exports = function(content) {
   this.cacheable && this.cacheable()
   const callback = this.async()
 
@@ -24,7 +24,6 @@ function assembleLoader(content) {
     if (err) {
       throw new Error(err.message)
     }
-    callback(null, view.content)
+    callback(null, `module.exports = ${JSON.stringify(view.content)};`)
   })
 }
-module.exports = assembleLoader
