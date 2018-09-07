@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "name": "Classic",
+      "image": "./images/sample/products/1.jpg",
+      "price": "$219"
+    },
+    {
+      "name": "Modest",
+      "image": "./images/sample/products/2.jpg",
+      "price": "$199"
+    },
+    {
+      "name": "Classic",
+      "image": "./images/sample/products/1.jpg",
+      "price": "$219"
+    }
+  ]
+}

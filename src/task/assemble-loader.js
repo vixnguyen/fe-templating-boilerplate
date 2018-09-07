@@ -17,7 +17,7 @@ module.exports = function(content) {
 
   app.layouts(options.layouts)
   app.partials(options.partials)
-  app.data(require(options.data))
+  app.data(options.data, { namespace: false })
   app.page('page.hbs', { content })
 
   app.render('page.hbs', options.define || {}, (err, view, name) => {

@@ -123,7 +123,7 @@ module.exports = {
             options: {
               layouts: path.resolve('./src/views/layout.hbs'),
               partials: path.resolve('./src/views/partials/*.hbs'),
-              data: path.resolve('./src/data/data.json')
+              data: path.resolve('./src/data/**/*.json')
             }
           }
         ]
