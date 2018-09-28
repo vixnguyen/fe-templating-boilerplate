@@ -50,39 +50,5 @@
       "name": "Toy Watch",
       "active": ""
     }
-  ],
-  "products": [
-    {
-      "name": "Classic",
-      "image": "./images/sample/products/1.jpg",
-      "price": "$219"
-    },
-    {
-      "name": "Modest",
-      "image": "./images/sample/products/2.jpg",
-      "price": "$199"
-    },
-    {
-      "name": "Classic",
-      "image": "./images/sample/products/1.jpg",
-      "price": "$219"
-    }
-  ],
-  "contact_us": [
-    "Customer Service",
-    "Update Your Email Preferences",
-    "Trade In Your Watch",
-    "Sell us Your Rolex",
-    "Sell us Your Watch"
-  ],
-  "help": [
-    "Order Information",
-    "Shipping Options",
-    "International Shipping",
-    "Payment Options",
-    "Returning & Exchanging",
-    "Product Warranty",
-    "Repair Center"
-  ],
-  "title": "Homepage"
+  ]
 }
